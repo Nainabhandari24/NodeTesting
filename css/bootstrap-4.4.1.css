@@ -3308,11 +3308,10 @@ input[type="button"].btn-block {
 }
 
 .dropup .dropdown-toggle:empty::after {
-  margin-left: 20;
+  margin-left: 0;
 }
 
 .dropright .dropdown-menu {
-	
   top: 0;
   right: auto;
   left: 100%;
@@ -6074,8 +6073,7 @@ a.close.disabled {
   align-items: center;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 0.76rem;
-	padding: 0.24rem;
+  padding: 0.75rem;
   border-top: 1px solid #dee2e6;
   border-bottom-right-radius: calc(0.3rem - 1px);
   border-bottom-left-radius: calc(0.3rem - 1px);
