@@ -1,0 +1,656 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="viewport" content="width=device-width" />
+
+<title>Creating a Multiscreen Theme for Wordpress Using Dreamweaver CS5.5</title>
+
+<style type="text/css">
+
+body {
+
+	font-family: Verdana, Geneva, sans-serif; 
+
+	font-size: 14px;
+
+}
+
+</style>
+
+
+
+</head>
+
+
+
+<body>
+
+<div>
+
+  <div>
+
+    <div>
+
+      <div id="requirements-title" tabindex="0">
+
+        <h2>  Requirements</h2>
+
+      </div>
+
+      <div id="requirements-content">
+
+        <div>
+
+          <div>
+
+            <h3>Prerequisite knowledge</h3>
+
+            <div>
+
+              <p>A basic working knowledge of Dreamweaver, web standards (for example, XHTML and CSS), and PHP will be helpful.</p>
+
+            </div>
+
+            <h3>User level</h3>
+
+            <p>Intermediate</p>
+
+          </div>
+
+        </div>
+
+        <div>
+
+          <div>
+
+            <h3>Required products</h3>
+
+            <ul>
+
+              <li> Dreamweaver Dreamweaver CS5.5 <a href="http://www.adobe.com/go/trydreamweaver/">(Download trial)</a></li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+        <div>
+
+          <div>
+
+            <h3>Sample files</h3>
+
+            <ul>
+
+              <li></li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div>
+
+  <div><a name="articlecontentAdobe_text_28" id="articlecontentAdobe_text_28"></a>
+
+    <div>
+
+      <div>
+
+        <h3>Additional Requirements</h3>
+
+        <h4>WordPress</h4>
+
+        <ul>
+
+          <li><a target="_blank" href="http://wordpress.org/download/">Learn more</a></li>
+
+        </ul>
+
+        <h4>XAMPP (if you have Windows)</h4>
+
+        <ul>
+
+          <li><a target="_blank" href="http://www.apachefriends.org/en/xampp-windows.html#641">Learn more</a></li>
+
+        </ul>
+
+        <h4>MAMP (if you have Mac OS X)</h4>
+
+        <ul>
+
+          <li><a target="_blank" href="http://www.mamp.info/en/index.html">Learn more</a></li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <a name="articlecontentAdobe_text" id="articlecontentAdobe_text"></a>
+
+    <div>
+
+      <div>
+
+        <p><strong>Creating a Multiscreen Theme for Wordpress Using Dreamweaver CS5.5</strong></p>
+
+        <p>This is a Tutorial which focuses on creating a custom Multiscreen theme using media queries and CSS Styles editing using Dreamweaver CS5.5.The theme will be optimized for a smart phone, tablet and desktop. We will also use the resolution management feature which is new to DW CS 5.5.
+
+        If you are new to wordpress/Custom wordpress theming I advise that you go through the 4 part series on editing wordpress themes using Dreamweaver CS5 by Brian Wood.</p>
+
+<p><a href="http://www.adobe.com/devnet/dreamweaver/articles/dw_wordpress_pt1.html">http://www.adobe.com/devnet/dreamweaver/articles/dw_wordpress_pt1.html</a>.</p>
+
+<p><strong>This tutorial is divided into the following sections:</strong></p>
+
+        <ul>
+
+          <li><a href="#ct">Creating a Child Theme in Wordpress </a></li>
+
+          <li><a href="#mq">Basic of CSS3 Media queries</a><a href="#ct"></a></li>
+
+          <li><a href="#setup">Setting up Media Queries in multiscreen style.css</a></li>
+
+          <li><a href="#another">Another technique to apply media queries to an existing wordpress theme</a></li>
+
+          <li><a href="#editing">Editing Styles using Resolution management and CSS styles panel</a></li>
+
+        </ul>
+
+        <p>&nbsp;</p>
+
+      </div>
+
+    </div>
+
+    <div>
+
+      <div>
+
+        <h3><strong>Setting up Wordpress</strong></h3>
+
+        <p>So lets start by setting up Wordpress.This tutorial is based on Wordpress 3.1 so please download this version from the <a href="http://www.mamp.info/en/index.html">wordpress website</a>.<br />
+
+          Once you have downloaded the wordpress files
+
+        please install wordpress on your local server XAMPP (if you have Windows) or Mamp on Mac or could be any other set up which supports php and has mysql installed.If you are setting up wordpress for the 1st time please go through this tutorial,<a href="http://www.adobe.com/devnet/dreamweaver/articles/dw_wordpress_pt2.html">http://www.adobe.com/devnet/dreamweaver/articles/dw_wordpress_pt2.html</a>. It has step by step instructions on how to install Wordpress in Dreamweaver.</p>
+
+<h3><a name="ct" id="mq2"></a></h3>
+
+<p><strong>Creating a child theme</strong></p>
+
+<p>One of the features in wordpress theme development is the concept of child themes.A child theme is a theme  which has its own stylesheet however inherits the template files from a parent theme.</p>
+
+        <p>        A child theme resides in its own directory in wp-content/themes.Create a new directory<br />
+
+          by the 
+
+        name multiscreen under wp-content/themes.</p>
+
+        <p><img src="images/filepanel.png" width="429" height="353" /></p>
+
+        <h4>The required style.css file</h4>
+
+        <p><em>style.css</em> is the one and only <strong>required</strong> file in a child theme. It provides the information header by which WordPress recognizes the child theme, and <strong>it replaces the style.css of the parent</strong>.As with any WordPress theme, the information header must be at the top of the file, the only difference being that in a child theme the Template: line is required, so that WordPress knows which theme is the parent of the child theme.</p>
+
+<p>Here is an example information header of a child theme&rsquo;s <em>style.css</em>:</p>
+
+        <pre>/*  
+
+Theme Name:   Twenty Ten Child  <br />Theme URI:    http: //example.com/  Description:Child theme for the Twenty Ten theme
+
+Author:       Your name here  <br />Author URI:   http: //example.com/about/  <br />Template:     twentyten  <br />Version:      0.1.0  
+
+*/</pre>
+
+<p><strong>Create a css file in the multiscreen directory.</strong></p>
+
+<ul>
+
+  <li>style.css</li>
+
+  </ul>
+
+<p><strong>Paste the following code inside style.css and save it.</strong></p>
+
+<p>/*<br />
+
+  Theme Name: Multiscreen<br />
+
+  Description: Multiscreen Theme using CSS Media Queries.<br />
+
+  Author: Your Name Here<br />
+
+  Template: twentyten<br />
+
+  */</p>
+
+<p>@import url(&quot;../twentyten/style.css&quot;);</p>
+
+<p>#site-title a {<br />
+
+  color: #009900;<br />
+
+  }</p>
+
+<p>The @import rule brings in the parent&rsquo;s stylesheet.</p>
+
+<p>The #site-title a rule defines a colour (green) for the site&rsquo;s name, overriding the corresponding rule</p>
+
+<p><strong> Go to Dashboard › Themes and activate your new theme, the Multiscreen.<br />
+
+  <br />
+
+  <img src="images/theme_.png" width="281" height="427" alt="theme" /><br />
+
+</strong></p>
+
+Once the multiscreen theme is activated go to the wordpress home page.You will notice that the page is the same as twentyten however the site title is green as the multiscreen style.css takes effect.
+
+<p></p>
+
+<p><img src="images/sitetitle.png" width="800" height="278" alt="title" /></p>
+
+<p>For more information on child themes go to   <a href="http://codex.wordpress.org/Child_Themes">http://codex.wordpress.org/Child_Themes</a>.</p>
+
+<p></p>
+
+<p><a name="mq" id="mq"></a></p>
+
+<h3 id="t2"><strong>Basics of CSS3 Media Queries</strong></h3>
+
+<p> A media query is a logical expression that is either true or false.A media query is true if the media type of the media query matches the media type of the device where the user agent is running  and all expressions in the media query are true.A media query consists of a media type and zero or more <span id="expressions">expressions</span> that check for the conditions of particular <span id="media-features">media features</span>.If you look at the example below the media type is screen and the expression is the maximum or minimum screenwidth.We need only one version of the html file and the CSS file will switch whenever these expressions are met. <br />
+
+</p>
+
+<p>Syntax for specifying the media type and expression within the link tag.</p>
+
+<p>&lt;!-- Phone --&gt;<br />
+
+  &lt;link href=&quot;phone.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;only screen and (max-width:320px)&quot; /&gt;<br />
+
+  &lt;!-- Tablet --&gt;<br />
+
+  &lt;link href=&quot;tablet.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;only screen and (min-width:321px) and (max-width:768px)&quot; /&gt;<br />
+
+  &lt;!-- Desktop --&gt;<br />
+
+  &lt;link href=&quot;desktop.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;only screen and (min-width:769px)&quot; /&gt;</p>
+
+<p>The image below is from the Multiscreen Preview window in Dreamweaver, It shows the change in the layout and style  as per the conditions specified in the media queries.<br />
+
+  Whenever these conditions are met the browser will switch to the corresponding css file. <br />
+
+</p>
+
+<p><img src="images/citrus.png" width="800" height="529" alt="msp" /></p>
+
+<p>If you want to know more you can read &quot;Using CSS media queries to target different screen resolutions&quot; by David Powers.<a href="http://www.adobe.com/devnet/dreamweaver/articles/dw_html5_pt3.html">http://www.adobe.com/devnet/dreamweaver/articles/dw_html5_pt3.html</a>.</p>
+
+<p></p>
+
+<p><a name="setup" id="mq3"></a></p>
+
+<p><strong>Setting up Media Queries in multiscreen style.css</strong></p>
+
+<p>We will need to specify the media queries within our child theme multiscreen style.css.</p>
+
+<p>Paste the following code after @import url(&quot;../twentyten/style.css&quot;); and save style.css</p>
+
+<p>@media screen and (max-width:320px)<br />
+
+  {<br />
+
+  #site-title a {<br />
+
+color: #009900;<br />
+
+}<br />
+
+}<br />
+
+</p>
+
+<p>@media screen and (min-width:321px) and (max-width:768px)<br />
+
+  {<br />
+
+  #site-title a {<br />
+
+  color:#3CF;<br />
+
+  }<br />
+
+  }</p>
+
+<p>@media screen and (min-width:769px)<br />
+
+  {<br />
+
+  #site-title a {<br />
+
+  color: #F00;<br />
+
+  }<br />
+
+  }</p>
+
+<p>If you have set up wordpress in Dreamweaver click on Multiscreen Preview. You can notice the media queries are working as per the conditions.<br />
+
+  The site title color is different at different screenwidths.
+
+</p>
+
+<p><img src="images/changed.png" width="800" height="536" alt="changed" /></p>
+
+<p>I have modified the phone media query css for a phone width, paste the following css into style.css</p>
+
+<p><strong>@media screen and (max-width:320px)</strong><br />
+
+  {<br />
+
+  <br />
+
+  #site-title a {<br />
+
+color: #009900;<br />
+
+}<br />
+
+#wrapper<br />
+
+{<br />
+
+width:300px;<br />
+
+}<br />
+
+#wrapper #main<br />
+
+{<br />
+
+width:300px;<br />
+
+}<br />
+
+#primary<br />
+
+{<br />
+
+display:none;<br />
+
+}<br />
+
+#access {<br />
+
+width:300px;<br />
+
+height:auto;<br />
+
+}<br />
+
+#site-description<br />
+
+{<br />
+
+float:left;<br />
+
+}<br />
+
+#site-title<br />
+
+{<br />
+
+width:100px;<br />
+
+}<br />
+
+#branding img<br />
+
+{<br />
+
+display:none;<br />
+
+}<br />
+
+#footer<br />
+
+{<br />
+
+width:300px;<br />
+
+}<br />
+
+#colophon<br />
+
+{<br />
+
+width:300px;<br />
+
+}<br />
+
+#content<br />
+
+{<br />
+
+width:300px;<br />
+
+padding:5px;<br />
+
+}<br />
+
+.menu ul<br />
+
+{<br />
+
+width:150px;<br />
+
+height:auto;<br />
+
+margin:0px auto;<br />
+
+}<br />
+
+.menu ul li<br />
+
+{<br />
+
+width:250px;<br />
+
+margin:3px;<br />
+
+display:block;<br />
+
+padding-left:5px;<br />
+
+background-color:#666;<br />
+
+color:#990000;<br />
+
+border-radius:10px;<br />
+
+}<br />
+
+</p>
+
+<p>	 }</p>
+
+<p><img src="images/phonecss.png" width="800" height="486" alt="phone" /></p>
+
+<p>As you can see in the image above we have applied a phone theme for wordpress at a screenwidth of 320 px.</p>
+
+<p><a name="another" id="another"></a></p>
+
+<h3>Another technique to apply media queries to an existing wordpress theme</h3>
+
+        <p>If you have read the Tutorial on Editing wordpress themes using Dreamweaver CS5 by Brian Wood we know that a simple WordPress web page is made up of three basic sections: a header, the content, and a footer.The header section contains links to style sheets, JavaScript. The header section is named as header.php, this file is inside the &quot;theme name&quot; folder.This is where we will need to add media query css links.</p>
+
+        <p><strong>e.g - </strong></p>
+
+        <p>&lt;!-- Phone --&gt;<br />
+
+  &lt;link href=&quot;phone.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;only screen and (max-width:320px)&quot; /&gt;<br />
+
+  &lt;!-- Tablet --&gt;<br />
+
+  &lt;link href=&quot;tablet.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;only screen and (min-width:321px) and (max-width:768px)&quot; /&gt;<br />
+
+  &lt;!-- Desktop --&gt;<br />
+
+  &lt;link href=&quot;desktop.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;only screen and (min-width:769px)&quot; /&gt;</p>
+
+        <p><strong>Make a copy of Style.css</strong></p>
+
+        <p>We will use twentyten theme for this section of the tutorial.Open style.css from  wp-content/themes/twentyten.<br />
+
+        Save as style_phone.css and style_tablet.css. We will use these three stylesheet for Phone,tablet and desktop.The default style.css will be for desktop.</p>
+
+        <ul>
+
+          <li>Phone - style_phone.css        </li>
+
+          <li>Tablet - style_tablet.css</li>
+
+          <li>desktop - style.css</li>
+
+        </ul>
+
+<p><strong>Header.php</strong></p>
+
+<p>Open header.php from wp-content/themes/twentyten.</p>
+
+        <p><img src="images/header.png" alt="header" /></p>
+
+        <p>Notice that the href for the stylesheet is using the bloginfo  function, this function displays information about the blog and can be used anywhere within a page template. The bloginfo('stylesheet_url') outputs http://example/home/wp/wp-content/themes/themename/style.css.</p>
+
+        <p>        Make sure you have set up Site specific code hints by going to   Site &gt; Site-Specific Code Hints.For more information on Site-Specific Code Hints go to <br />
+
+        <a href="http://www.adobe.com/devnet/dreamweaver/articles/dw_wordpress_pt2.html">http://www.adobe.com/devnet/dreamweaver/articles/dw_wordpress_pt2.html.</a></p>
+
+        <p><img src="images/general_template.png" width="800" height="164" alt="GT" /></p>
+
+        <p>Take the cursor in front of bloginfo and press Ctrl + Spacebar you will see that bloginfo is defined in general-template.php.This is located in <a href="#" title="http://core.trac.wordpress.org/browser/tags/3.1.1/wp-includes/general-template.php">wp-includes/general-template.php</a>.</p>
+
+        <p><strong>general-template.php and theme.php</strong></p>
+
+        <p>Open general-template.php from wp-includes.<br />
+
+        The output for bloginfo is using the get_bloginfo output, and the stylesheet_url is defined using get_stylesheet_uri() which is defined in theme.php.</p>
+
+<p><img src="images/gt.png" width="800" height="457" alt="General Template" /></p>
+
+<p>Open theme.php from wp-includes and copy paste the get_stylesheet_uri() function twice.Change the name of the function to get_stylesheet_uri_phone() and the css to style_phone.css so <br />
+
+  that it points to the style_phone.css which we created in the beginning. Follow the same steps for tablet. See image below.</p>
+
+<p><img src="images/duplicate.png" width="690" height="193" alt="dup" /></p>
+
+<p>In  general-template.php we need to add these new functions so that the output can be used. Add a case for phone and tablet.See image below.
+
+</p>
+
+<p><img src="images/gtadd.png" width="654" height="225" alt="AddCase" /></p>
+
+<p>The last step now is to add the links for the phone and tablet css in header.php. Paste the following code to the head section of header.php also replacing the existing link tag.</p>
+
+<p>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;only screen and (min-width:769px)&quot; href=&quot;&lt;?php bloginfo( 'stylesheet_url' ); ?&gt;&quot;/&gt;<br />
+
+  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;only screen and (max-width:320px)&quot; href=&quot;&lt;?php bloginfo('stylesheet_url_phone' ); ?&gt;&quot;/&gt;<br />
+
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;only screen and (min-width:321px) and (max-width:768px)&quot; href=&quot;&lt;?php bloginfo('stylesheet_url_tablet' ); ?&gt;&quot;/&gt;</p>
+
+<p>Notice that i have added the media queries for each screen width and the location of the css is also handled by new parameters which we added in general-template.php.</p>
+
+<p><a name="editing" id="mq4"></a></p>
+
+<p><strong>Editing Styles using Resolution management and CSS styles panel</strong></p>
+
+<p>The resolution management feature   is new to CS 5.5 and aims to give the user control on how to display a page with different resolutions / view-port sizes in Live-/Design View based on specified media queries.This helps the user to check the style sheets for each applicable media query.</p>
+
+<p> The Multiscreen button has now a drop down menu :</p>
+
+<p><img src="images/reso.png" width="500" height="496" alt="resolution management" /></p>
+
+<p>We are going to start editing the css for phone ,select smart phone from the drop down and Bring up the css styles panel.</p>
+
+<p><img src="images/All.png" width="600" height="517" alt="All" /></p>
+
+<p>Dreamweaver has picked up all the 3 files which are applied to this wordpress theme.We will now start using the inspect feature to make changes to the<br />
+
+  style_phone.css. Click on inspect so that we can start inspecting styles using the current tab in the css styles panel along with live code.<br />
+
+  In the image below i have selected the #wrapper id which is the container div for the twentyten theme. I have added a width of 320 px to this container div to customize the wordpress site for a phone screenwidth. We need not worry about which css file we are editing as Dreamweaver displays only the css in the current context of the screenwidth. It will only show  rules which have been defined in the style_phone.css.
+
+</p>
+
+<p><img src="images/inspect1.png" width="800" height="437" alt="inspec" /></p>
+
+<p>Next the #site-title has a width of 700px we will change that to 100px so that it is displayed within the wrapper div which is of 320px. We will also make<br />
+
+  the #site-description float left so that it is next to the site title.</p>
+
+<p><img src="images/changes.png" alt="changes" /></p>
+
+<p>We will remove the image for our phone version.The  header image is inside the #branding div, we will change its display from block to display none.<br />
+
+  The navigation bar is the #access div we have updated the width for it to be 270px, added some border radius to it. Please see the image below.<br />
+
+Till now we havent touched any code, all the changes have been made using Dreamweaver's inspect and css styles panel.</p>
+
+<p><img src="images/removeimage.png" width="800" height="391" alt="remove" /></p>
+
+<p>Next I have made changes to the menu class so that the links are vertical and basically reduced the size of the #main id which contains the post. Also changed the width of the footer items.<br />
+
+  The updated twentyten for a phone screenwidth is in the source files available along with this tutorial.</p>
+
+<p><img src="images/final.png" width="900" height="575" alt="Final" /></p>
+
+<p>&nbsp;</p>
+
+<p>As you can see using Dreamweaver we can easily modify our existing theme to use media queries and create a wordpress site which is optimized for various screenwidths.</p>
+
+<p>&nbsp;</p>
+
+<p><br />
+
+</p>
+
+        <p><br />
+
+    </p>
+
+        <p>&nbsp;</p>
+
+      </div>
+
+    </div>
+
+    <div>
+
+      <div> </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+
+</html>
+

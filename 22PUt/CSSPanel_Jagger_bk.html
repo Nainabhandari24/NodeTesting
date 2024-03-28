@@ -1,0 +1,697 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>CSS Panel modernization</title>
+
+
+
+<style type="text/css">
+
+/*	Less Framework 4
+
+	http://lessframework.com
+
+	by Joni Korpi
+
+	License: http://creativecommons.org/licenses/MIT/	*/
+
+
+
+
+
+/*	Resets
+
+	------	*/
+
+
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, 
+
+p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, 
+
+img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, hr, 
+
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
+
+table, caption, tbody, tfoot, thead, tr, th, td,
+
+article, aside, canvas, details, figure, figcaption, hgroup, 
+
+menu, footer, header, nav, section, summary, time, mark, audio, video {
+
+	margin: 0;
+
+	padding: 0;
+
+	border: 0;
+
+}
+
+
+
+article, aside, canvas, figure, figure img, figcaption, hgroup,
+
+footer, header, nav, section, audio, video {
+
+	display: block;
+
+}
+
+
+
+a img {border: 0;}
+
+
+
+
+
+
+
+/*	Typography presets
+
+	------------------	*/
+
+
+
+.gigantic {
+
+	font-size: 110px;
+
+	line-height: 120px;
+
+	letter-spacing: -2px;
+
+}
+
+
+
+.huge, h1 {
+
+	font-size: 68px;
+
+	line-height: 72px;
+
+	letter-spacing: -1px;
+
+}
+
+
+
+.large, h2 {
+
+	font-size: 42px;
+
+	line-height: 48px;
+
+}
+
+
+
+.bigger, h3 {
+
+	font-size: 26px;
+
+	line-height: 36px;
+
+}
+
+
+
+.big, h4 {
+
+	font-size: 22px;
+
+	line-height: 30px;
+
+}
+
+
+
+body {
+
+	font: 16px/24px Georgia, serif;
+
+}
+
+
+
+.small, small {
+
+	font-size: 13px;
+
+	line-height: 18px;
+
+}
+
+
+
+/* Selection colours (easy to forget) */
+
+
+
+::selection 	 	{background: rgb(255,255,158);}
+
+::-moz-selection 	{background: rgb(255,255,158);}
+
+img::selection 		{background: transparent;}
+
+img::-moz-selection	{background: transparent;}
+
+body {-webkit-tap-highlight-color: rgb(255,255,158);}
+
+
+
+
+
+
+
+/*		Default Layout: 992px. 
+
+		Gutters: 24px.
+
+		Outer margins: 48px.
+
+		Leftover space for scrollbars @1024px: 32px.
+
+-------------------------------------------------------------------------------
+
+cols    1     2      3      4      5      6      7      8      9      10
+
+px      68    160    252    344    436    528    620    712    804    896    */
+
+
+
+body {
+
+	width: 896px;
+
+	padding: 72px 48px 84px;
+
+	background: rgb(232,232,232);
+
+	color: rgb(60,60,60);
+
+	-webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
+
+}
+
+
+
+
+
+
+
+/*		Tablet Layout: 768px.
+
+		Gutters: 24px.
+
+		Outer margins: 28px.
+
+		Inherits styles from: Default Layout.
+
+-----------------------------------------------------------------
+
+cols    1     2      3      4      5      6      7      8
+
+px      68    160    252    344    436    528    620    712    */
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+	
+
+	body {
+
+		width: 712px;
+
+		padding: 48px 28px 60px;
+
+	}
+
+}
+
+
+
+
+
+
+
+/*		Mobile Layout: 320px.
+
+		Gutters: 24px.
+
+		Outer margins: 34px.
+
+		Inherits styles from: Default Layout.
+
+---------------------------------------------
+
+cols    1     2      3
+
+px      68    160    252    */
+
+
+
+@media only screen and (max-width: 767px) {
+
+	
+
+	body {
+
+		width: 252px;
+
+		padding: 48px 34px 60px;
+
+	}
+
+	
+
+}
+
+
+
+
+
+
+
+/*		Wide Mobile Layout: 480px.
+
+		Gutters: 24px.
+
+		Outer margins: 22px.
+
+		Inherits styles from: Default Layout, Mobile Layout.
+
+------------------------------------------------------------
+
+cols    1     2      3      4      5
+
+px      68    160    252    344    436    */
+
+
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+	
+
+	body {
+
+		width: 436px;
+
+		padding: 36px 22px 48px;
+
+	}
+
+	
+
+}
+
+.green {
+
+	background-color: rgba(51,204,0,1);
+
+}
+
+.yellow
+
+{
+
+	background-color:#FFCC00;
+
+}
+
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+    <h1>CSS panel modernization for Jagger<br />
+
+    </h1>
+
+    <p>last updated April 7-201 by <a href="mailto:sarthak@adobe.com">Sarthak Singhal</a></p>
+
+<p>QE: Sarthak Singhal, Silas Norbu Lepcha</p>
+
+    <p>Dev:     Aadithya</p>
+
+    <p>&nbsp;</p>
+
+    <p><strong>Priority - </strong></p>
+
+    <p> <strong>M - MUST</strong> have this. <br />
+
+      <strong>S - SHOULD</strong> have this if at all possible.<br />
+
+      <strong>C - COULD</strong> have this if it does not effect anything else.<br />
+
+    <strong>W - WON'T</strong> have this time but would like in the future. </p>
+
+<p>&nbsp;</p>
+
+<table width="133%" border="1" cellpadding="2" cellspacing="2">
+
+  <col width="64" span="2" />
+
+  <col width="75" />
+
+  <col width="448" />
+
+  <col width="657" />
+
+  <tr>
+
+    <td width="30" height="46" valign="top"><blockquote>
+
+      <p><strong>Sno</strong></p>
+
+    </blockquote></td>
+
+    <td width="514" valign="top"><blockquote>
+
+      <p><strong>Workflow</strong></p>
+
+    </blockquote></td>
+
+    <td width="57" valign="top"><strong>Visual </strong></td>
+
+    <td width="62" valign="top"><blockquote>
+
+      <p><strong>Priority</strong></p>
+
+    </blockquote></td>
+
+    <td width="72" valign="top"><blockquote>
+
+      <p><strong>Exisiting Panel</strong></p>
+
+    </blockquote></td>
+
+    <td width="165" valign="top"><strong>New Panel</strong></td>
+
+    <td width="232" valign="top"><blockquote>
+
+      <p><strong>Comments</strong></p>
+
+    </blockquote></td>
+
+  </tr>
+
+  <tr>
+
+    <td height="46" valign="top">1</td>
+
+    <td valign="top">&quot;All&quot; View showing all the rules applied in the document.</td>
+
+    <td valign="top">&nbsp;</td>
+
+    <td valign="top">M</td>
+
+    <td valign="top"><p class="green">Yes</p></td>
+
+    <td valign="top"><p class="green">Yes</p></td>
+
+    <td valign="top">By default in the New CSS rules panel all rules will be shown.</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">2</td>
+
+    <td valign="top">Rules in the new CSS rules panel will show a preview of the properties. e.g background color and color</td>
+
+    <td valign="top">&nbsp;</td>
+
+    <td valign="top">M</td>
+
+    <td valign="top"><p class="yellow">No</p></td>
+
+    <td valign="top"><p class="green">Yes</p></td>
+
+    <td valign="top">Available in the New CSS rules panel.</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">3</td>
+
+    <td valign="top">&quot;All&quot; view showing multiple css files for media query attached html files</td>
+
+    <td valign="top">&nbsp;</td>
+
+    <td valign="top">M</td>
+
+    <td valign="top"><p class="green">Yes</p></td>
+
+    <td valign="top"><p class="green">Yes</p></td>
+
+    <td valign="top">Usefull in case of media queries and a must have.</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">3</td>
+
+    <td valign="top">Rules shown on the basis of context in design and live view.</td>
+
+    <td valign="top">&nbsp;</td>
+
+    <td valign="top">M</td>
+
+    <td valign="top"><p class="green">Yes</p></td>
+
+    <td valign="top"><p class="green">Yes</p></td>
+
+    <td valign="top">&nbsp;</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">4</td>
+
+    <td valign="top">In &quot;current&quot; view, all the rules applied to a selection are displayed</td>
+
+    <td valign="top">&nbsp;</td>
+
+    <td valign="top">Medium</td>
+
+    <td valign="top">Yes</td>
+
+    <td valign="top">&nbsp;</td>
+
+    <td valign="top">&nbsp;</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">5</td>
+
+    <td valign="top">Enable and Disable of CSS properties in all views</td>
+
+    <td valign="top">&nbsp;</td>
+
+    <td valign="top">High</td>
+
+    <td valign="top">Yes</td>
+
+    <td valign="top">&nbsp;</td>
+
+    <td valign="top">&nbsp;</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">6</td>
+
+    <td valign="top">Double click to a rule name in &quot;Current&quot; view opens dialog for editing the set properties</td>
+
+    <td valign="top">&nbsp;</td>
+
+    <td valign="top">High</td>
+
+    <td valign="top">Yes</td>
+
+    <td valign="top">&nbsp;</td>
+
+    <td valign="top">&nbsp;</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">7</td>
+
+    <td valign="top">Showing Category view</td>
+
+    <td valign="top">&nbsp;</td>
+
+    <td valign="top">High</td>
+
+    <td valign="top">Yes</td>
+
+    <td valign="top">&nbsp;</td>
+
+    <td valign="top">&nbsp;</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">8</td>
+
+    <td valign="top">Showing List view</td>
+
+    <td valign="top">&nbsp;</td>
+
+    <td valign="top">Low</td>
+
+    <td valign="top">Yes</td>
+
+    <td valign="top">&nbsp;</td>
+
+    <td valign="top">&nbsp;</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">9</td>
+
+    <td valign="top">Showing set properties view</td>
+
+    <td valign="top">&nbsp;</td>
+
+    <td valign="top">High</td>
+
+    <td valign="top">Yes</td>
+
+    <td valign="top">&nbsp;</td>
+
+    <td valign="top">&nbsp;</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">10</td>
+
+    <td valign="top">In &quot;Set Properties&quot; view, ability to hand code a property and then add/edit it.</td>
+
+    <td valign="top">&nbsp;</td>
+
+    <td valign="top">Medium</td>
+
+    <td valign="top">Yes</td>
+
+    <td valign="top">&nbsp;</td>
+
+    <td valign="top">&nbsp;</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">11</td>
+
+    <td valign="top">Attaching a new external style sheet</td>
+
+    <td valign="top">&nbsp;</td>
+
+    <td valign="top">High</td>
+
+    <td valign="top">Yes</td>
+
+    <td valign="top">&nbsp;</td>
+
+    <td valign="top">&nbsp;</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">12</td>
+
+    <td valign="top">Creating a new rule</td>
+
+    <td valign="top">&nbsp;</td>
+
+    <td valign="top">High</td>
+
+    <td valign="top">Yes</td>
+
+    <td valign="top">&nbsp;</td>
+
+    <td valign="top">&nbsp;</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">13</td>
+
+    <td valign="top">Deleting a css property</td>
+
+    <td valign="top">&nbsp;</td>
+
+    <td valign="top">High</td>
+
+    <td valign="top">Yes</td>
+
+    <td valign="top">&nbsp;</td>
+
+    <td valign="top">&nbsp;</td>
+
+  </tr>
+
+  <tr>
+
+    <td height="26" valign="top">&nbsp;</td>
+
+    <td>&nbsp;</td>
+
+    <td>&nbsp;</td>
+
+    <td>&nbsp;</td>
+
+    <td>&nbsp;</td>
+
+    <td>&nbsp;</td>
+
+    <td>&nbsp;</td>
+
+  </tr>
+
+  
+
+</table>
+
+<p>&nbsp;</p>
+
+<p class="bigger">
+
+Initial Mock up 
+
+</p>
+
+<p class="bigger"><img src="jaggerimages/cssPanel.png" width="1680" height="1050" alt="mock1" /></p>
+
+</body>
+
+</html>

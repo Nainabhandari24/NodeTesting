@@ -1,0 +1,2171 @@
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>CSXS Integration Testcases</title>
+
+
+
+<link href="../../css/slash.css" rel="stylesheet" type="text/css" />
+
+
+
+<style type="text/css">
+
+<!--
+
+/* Uncomment the code below to hide the frequency, smoke, acceptance fields while authoring your test plan.  After uncommenting the code, double-click any div with the class "hideFreqSmokeAccept" to show all of the collapsed divs in DW design view.  To hide the expanded divs again, right-click inside the div and select Element View > Hidden.  You should comment out this code once your test plan is ready for review, so reviewers can see all of the fields.
+
+*/
+
+.hideFreqSmokeAccept {
+
+/*	height: 3px;
+
+	overflow: hidden;*/
+
+}
+
+/* If the body text is too small on your machine (e.g. an undocked ThinkPad T61p with 1920 x 1200 resolution), you can adjust the font-size below by uncommenting the code below. By default, the font-size is 0.7 em.  Try changing it to 0.8 em.  Note that other people viewing your test plan will have different resolutions and monitor sizes, so the text may appear too large on their machines.
+
+*/
+
+/* If you want to remove the Bowie sidebar image to conserve horizontal pixel space, uncomment the margin-left and background-image code below.
+
+*/
+
+body {
+
+/*	font-size:0.8em; 
+
+	margin-left:15px;
+
+	background-image:none;*/
+
+}
+
+.smallText1 {font-size: 11px; font-weight: lighter;}
+
+.pinkText {
+
+	color: #F0F;
+
+}
+
+-->
+
+</style>
+
+</head>
+
+
+
+<body>
+
+    <h1>CSXS Integration  Test Plan for 11.5</h1>
+
+<p>QE: Silas Lepcha</p>
+
+<p>Dev:    Narayani</p>
+
+<p>Defect log:</p>
+
+<p>Project: <strong>Slash</strong></p>
+
+    <p>Abbreviations:</p>
+
+    <ul>
+
+      <li>S = Smoke</li>
+
+      <li>A = Acceptance</li>
+
+    </ul>
+
+    <div id="mainContent">
+
+      <h4>Outline</h4>
+
+      <p>Not provisioned state (user needs to log in)</p>
+
+      <ol>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S1TC1">Verify Sign in dialog shows when clicking on "Sign In"menu item in Connections Home menu, then log in</a> (SMOKE /ACC)</li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S1TC2">Click on link, verify that installer dialog launches, fill out form is correct, then sign in</a> (SMOKE /ACC)</li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S1TC3">"Forgot Password link"- check functionality</a> (ACC)</li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S1TC4">Enter incorrect email/pwd combo in Sign In dialog &amp; Error verification</a> (SMOKE /ACC)</li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S1TC5">Check the "Stay signed in" checkbox &amp; Test behavior</a> (ACC)</li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S1TC6">Do not check the "Stay signed in" checkbox &amp; Test behavior</a></li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S1TC7">"Sign In" dialog: verify "Cancel" button cancels out dialog, verify ESCAPE key closes dialog</a> (ACC)</li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S1TC8">Unplug ethernet/shutdown wifi &amp; attempt to provision by entering correct email/pwd combo - verify error message </a>(SMOKE /ACC)</li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S1TC9">Not provisioned state: Verify Connections Home dialog's menu items functionality</a></li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S1TC10">Not provisioned state: Verify that Access CS Live panel shows when accessing menu entry from Window&gt;Extensions menu</a></li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S1TC11">Not provisioned state: test existing service: test Share My Screen basic functionality</a> (SMOKE / ACC)</li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S1TC12">Not provisioned state: Verify Access CS Live application bar button icon</a></li>
+
+      </ol>
+
+      <p> </p>
+
+      <h6>Provisioned state (user logged in)</h6>
+
+      <ol>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S2TC1">Provisioned state: Verify Access CS Live dialog's menu items </a>(SMOKE)</li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S2TC2">Change DW workspace settings and verify that Connection panel still displays correctly</a></li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S2TC3">Provisioned state: Access CS Live panel&gt;Click on "Manage My Account" &amp; verify functionality</a></li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S2TC4">Provisioned state: Access CS Live panel&gt;Click on "Browser Lab" &amp; verify functionality </a>(ACC)</li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S2TC5">Provisioned state: Access CS Live panel&gt;Click on "Acrobat.com" &amp; verify functionality</a></li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S2TC6">Provisioned state: Access CS Live panel&gt;Click on "CS News and Resources" &amp; verify functionality</a></li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S2TC7">Provisioned state: Access CS Live panel&gt;Click on "My other CS Live Services" &amp; verify functionality</a></li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S2TC8">Provisioned state: Access CS Live panel&gt;Click on " Sign Out" &amp; verify that the user is signed out and that the button/panel is back to the unprovisioned state</a> (ACC)</li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S2TC9">Provisioned state: Access CS Live panel&gt;Work offline &amp; verify that the panel is in offline mode</a></li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S2TC10">Test existing service: Search for Help basic functionality</a> (SMOKE)</li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S2TC11">Verify UI of Window&gt;Extensions menu</a></li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S2TC12">Provisioned state: verify functionality of Window&gt;Extensions menu </a>(ACC)</li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S2TC13">Provisioned state: verify user is still signed in after system restart when selecting "stay signed in"</a>(ACC)</li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S2TC14">Provisioned state: Verify Access CS Live application bar button icon</a></li>
+
+      </ol>
+
+      <h6>Internationalization testing</h6>
+
+      <ol>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S3TC1">Use testfiles with double-byte/hi-ascii path to test BrowserLab </a>(SMOKE)</li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S3TC2">Sign in using username w/ double-byte/hi-ascii, pwd w/ double-byte/hi-ascii</a></li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S3TC5">Enter double-byte/hi-ascii in Search for Help field</a></li>
+
+      </ol>
+
+      <h6>Accessibility</h6>
+
+      <ol>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S4TC1">Run accessibility testing on the Access CS Live menu &amp; "Sign In" dialog using the JAWS screen reader</a></li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S4TC2">Run accessibility testing on the Access CS Live menu &amp; "Sign In" dialog using high contrast</a></li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S4TC3">Run accessibility testing by verifying up/down functionality in the Access CS Live dialog &amp; tabbing between various fields/components in the "Sign In" dialog</a></li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S4TC4">Make sure pressing the ESC button closes the Access CS Live dialog</a></li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S4TC5">Verify that there is a keyboard shortcut and under the Window menu for the Access CS Live dialog</a></li>
+
+      </ol>
+
+      <h6>Extensibility:</h6>
+
+      <ol>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S5TC1">Install CSXS Unit Test extension. Verify it works. Uninstall custom extension </a>(ACC)</li>
+
+      </ol>
+
+      <p><br>
+
+      </p>
+
+      <h6>Performance testing</h6>
+
+      <ol>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S6TC1">Performance testing: verify Dreamweaver launch time with and without extensions loading</a></li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S6TC2">Performance testing: verify that loading CS Live panel takes less than 3 seconds</a></li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S6TC3">Performance testing: if applicable, test panel loading time when user installs 10 custom CSXS extensions. Verify app memory consumption</a></li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S6TC4">Performance testing: memory consumption by using CS live services</a></li>
+
+      </ol>
+
+      <p><br>
+
+      </p>
+
+      <h6>API testing</h6>
+
+      <p>None</p>
+
+      <h6>Additional test cases</h6>
+
+      <h6><br>
+
+      </h6>
+
+      <ol>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S7TC1">Verify UI of Access CS Live flyout menu</a></li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S7TC2">Verify shutdown of ServiceManager after quitting Dreamweaver</a></li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S7TC3">Verify CSXS log in/out behavior between CS5 suite products, with "Stay signed in" checked </a>(ACC)</li>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S7TC4">Verify CSXS log in/out behavior between CS5 suite products, without "Stay signed in" checked</a></li>
+
+      </ol>
+
+      <p><br>
+
+      </p>
+
+      <h6>Security testing</h6>
+
+      <ol>
+
+        <li><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/ConnectionHome_testplan.htm#S8TC1">Test swf shipped with CSXS extensions to make sure that they are signed and run validator(s) on them to make sure they are secure</a></li>
+
+      </ol>
+
+      <p> </p>
+
+      <h1>A. Functionality/UI</h1>
+
+      <h3>Common Steps:</h3>
+
+      <h3>a) Provisioned state: Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign In&rdquo; menu entry, enter your email address/pwd &amp; click &ldquo;Sign In&rdquo; button to log in into service</h3>
+
+      <h3>Not provisioned state: Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign Out&rdquo; menu entry</h3>
+
+      <p> </p>
+
+      <h2><a name="S1TC1" id="S1TC1"></a>1. Subject: Not provisioned state: Verify Sign in dialog shows when clicking on "Sign In"menu item in Connections Home menu, then log in</h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: UI</p>
+
+      <p>Frequency: 1</p>
+
+      <p>Smoke: Y</p>
+
+      <p>Acceptance: Y</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>Not provisioned state: Open CH panel by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign Out&rdquo; menu entry</p>
+
+      <h2>Steps:</h2>
+
+      <ol>
+
+        <li>Click on CS Access Live button, located on the right side of the Dreamweaver Application Bar</li>
+
+        <li>Verify that there is a "sign in" button</li>
+
+        <li>Click on the "Sign In" menu item in the Connections Home menu</li>
+
+        <li>Verify that the "Sign In to CS Live" dialog shows up --&gt; Verify that there is an "Email address" field, a "Password" field, a "Forgot Password" link, a "Stay signed In" checkbox, a "Cancel" button, a "Sign In" button</li>
+
+        <li>Login with your Adobe ID credentials</li>
+
+        <li>open CH panel(Window &gt; Extensions &gt; Access CS Live), verify that there is a sign out button</li>
+
+        <li>Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button and verify that there is a "Sign Out" menu entry</li>
+
+      </ol>
+
+      <h2><a name="S1TC2" id="S1TC2"></a>2. Click on link, verify that installer dialog launches, fill out form is correct, then sign in</h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Links</p>
+
+      <p>Frequency: 2</p>
+
+      <p>Smoke: Y</p>
+
+      <p>Acceptance: Y</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>Not provisioned state: Open CH panel by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign Out&rdquo; menu entry</p>
+
+      <p>Possible step: Nuke prefs/registry to go back to initial state</p>
+
+      <h2>Steps:</h2>
+
+      <ol>
+
+        <li>open Window &gt;Extensions &gt;Access CS Live</li>
+
+        <li>Click on the "Start my complimentary subscription to CS Live Services" " menu item in the Connections Home menu</li>
+
+        <li>Verify that installer dialog comes up</li>
+
+        <li>click on "Create an Adobe ID" and verify that registration form opens</li>
+
+        <li>click on back and login with your adobe ID, verify that you getting authenticated</li>
+
+        <li>Go back to Dreamweaver</li>
+
+        <li>TBD: Can't verify this step because actual dw version doesn't work: Provisioned state: Open CH panel by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign In&rdquo; menu entry, enter your email address/pwd &amp; click &ldquo;Sign In&rdquo; button to log in into service</li>
+
+      </ol>
+
+      <h2><a name="S1TC3" id="S1TC3"></a>3. "Forgot Password link"- check functionality</h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Links</p>
+
+      <p>Frequency: 3</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: Y</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>Not provisioned state: Open CH panel by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign Out&rdquo; menu entry</p>
+
+      <h2>Steps:</h2>
+
+      <ol>
+
+        <li>Click on CS Access Live button, located on the right side of the Dreamweaver Application Bar</li>
+
+        <li>Click on the "Sign In" menu item in the Connections Home menu</li>
+
+        <li>Verify that the "Sign In to CS Live" dialog shows up --&gt;</li>
+
+        <li>Click on the "Forgot Password" link</li>
+
+        <li>Verify that your default browser opens the "Adobe-Connection" page at https://www.adobe.com/cfusion/membership/index.cfm?</li>
+
+      </ol>
+
+      <p> </p>
+
+      <h2><a name="S1TC4" id="S1TC4"></a>4. Enter incorrect email/pwd combo in Sign In dialog &amp; Error verification</h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: UI</p>
+
+      <p>Frequency: 2</p>
+
+      <p>Smoke: Y</p>
+
+      <p>Acceptance: Y</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>Not provisioned state: Open CH panel by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign Out&rdquo; menu entry</p>
+
+      <h2>Steps:</h2>
+
+      <ol>
+
+        <li>Click on CS Access Live button, located on the right side of the Dreamweaver Application Bar</li>
+
+        <li>Click on the "Sign In" menu item in the Connections Home menu</li>
+
+        <li>Verify that the "Sign In to CS Live" dialog opens</li>
+
+        <li>Enter an invalid email address "aaaa" in the email address field and click on "Sign In" --&gt; Verify that you get an error message that says "Enter a valid email address"</li>
+
+        <li>Enter a valid email address "aaaa@aa.com" and click on "Sign In" --&gt; Verify that you get an error message that says "ID and password do not match"</li>
+
+        <li>Enter an valid email address "aaaa@aa.com" and incorrect password "aaa" and click on "Sign In" --&gt; Verify that you get an error message that says "ID and password do not match"</li>
+
+        <li>Enter password, which has more than 12 chars -&gt; error: password should have 6-12 chars</li>
+
+      </ol>
+
+      <h2><a name="S1TC5" id="S1TC5"></a>5. Check the "Stay signed in" checkbox &amp; test behavior</h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Log In</p>
+
+      <p>Frequency: 3</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: Y</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>Not provisioned state: Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign Out&rdquo; menu entry</p>
+
+      <h2>Steps:</h2>
+
+      <ol>
+
+        <li>Click on CS Access Live button, located on the right side of the Dreamweaver Application Bar</li>
+
+        <li>Click on the "Sign In" menu item in the Connections Home menu</li>
+
+        <li>Verify that the "Sign In to CS Live" dialog opens</li>
+
+        <li>login with your Adobe ID credentials</li>
+
+        <li>Check the box for "Stay signed in" and click on "Sign In" --&gt; Verify that the login goes through</li>
+
+        <li>Quit Dreamweaver</li>
+
+        <li>Restart your operating system</li>
+
+        <li>Launch Dreamweaver</li>
+
+        <li>Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button --&gt; Verify that you are still signed in (there should be a "Sign Out" menu entry under the CH menu)</li>
+
+        <li>open CH panel, verify that "sign out" button is shown</li>
+
+        <li>Click on any service (BrowserLab, etc) and verify that the service launches</li>
+
+      </ol>
+
+      <h2><a name="S1TC6" id="S1TC6"></a>6. Subject: Do not check the "Stay signed in" checkbox &amp; test behavior</h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Log In</p>
+
+      <p>Frequency: 3</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>Not provisioned state: Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign Out&rdquo; menu entry</p>
+
+      <h2>Steps:</h2>
+
+      <ol>
+
+        <li>Click on CS Access Live button, located on the right side of the Dreamweaver Application Bar</li>
+
+        <li>Click on the "Sign In" menu item in the Connections Home menu</li>
+
+        <li>Verify that the "Sign In to CS Live" dialog opens</li>
+
+        <li>login with your Adobe ID credentials</li>
+
+        <li>DO NOT Check the box for "Stay signed in" and click on "Sign In" --&gt; Verify that the login goes through</li>
+
+        <li>Quit Dreamweaver</li>
+
+        <li>Restart your operating system</li>
+
+        <li>Launch Dreamweaver</li>
+
+        <li>Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button --&gt; Verify that you are logged out(there should be a "Sign In" menu entry under the CH menu)</li>
+
+        <li>open CH panel, verify that "Sign In" button is shown</li>
+
+        <li>Click on any service (BrowserLab, etc) and verify that login screen opens before service the launches</li>
+
+      </ol>
+
+      <p> </p>
+
+      <h2><a name="S1TC7" id="S1TC7"></a>7. "Sign In" dialog: verify "Cancel" button cancels out dialog, verify ESCAPE key closes dialog</h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Log In</p>
+
+      <p>Frequency: 3</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: Y</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>Not provisioned state: Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign Out&rdquo; menu entry</p>
+
+      <h2>Steps:</h2>
+
+      <ol>
+
+        <li>Click on CS Access Live button, located on the right side of the Dreamweaver Application Bar</li>
+
+        <li>Click on the "Sign In" menu item in the Connections Home menu</li>
+
+        <li>Verify that the "Sign In to CS Live" dialog opens</li>
+
+        <li>Enter your Adobe ID credentials</li>
+
+        <li>Click on the "Cancel" button --&gt; Verify that the login does not goes through</li>
+
+        <li>open CH extension, reopen login dialog(click on "sign in")</li>
+
+        <li>verify that dialog closes when hitting ESCAPE key</li>
+
+        <li>Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button --&gt; Verify that you are still Signed Out (there should be a "Sign In " menu entry under the CH menu)</li>
+
+      </ol>
+
+      <p> </p>
+
+      <h2><a name="S1TC8" id="S1TC8"></a>8. Unplug ethernet/shutdown wifi &amp; attempt to provision by entering correct email/pwd combo - verify error message</h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Log In</p>
+
+      <p>Frequency: 3</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>Not provisioned state: Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign Out&rdquo; menu entry</p>
+
+      <h2>Steps:</h2>
+
+      <ol>
+
+        <li>Shutdown your internet access by disabling your ethernet connection and/or your wifi connection</li>
+
+        <li>Click on CS Access Live button, located on the right side of the Dreamweaver Application Bar</li>
+
+        <li>Click on the "Sign In" menu item in the Connections Home menu</li>
+
+        <li>Verify that the "Sign In to CS Live" dialog opens</li>
+
+        <li>login with your Adobe ID credentials</li>
+
+        <li>Click on the "Sign In " button --&gt; Verify that you get an error message saying that "Failed to connect.Try again"</li>
+
+        <li>Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button --&gt; Verify that there is a message saying "You are currently offline" TBD</li>
+
+      </ol>
+
+      <p> </p>
+
+      <h1><a name="S1TC9" id="S1TC9"></a>9. Not Provisioned state: Verify Connections Home dialog's menu items functionality</h1>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: UI</p>
+
+      <p>Frequency: choose 2</p>
+
+      <p>Smoke: Y</p>
+
+      <p>Acceptance: Y</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>Not provisioned state: Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign Out&rdquo; menu entry</p>
+
+      <h2>Steps:</h2>
+
+      <ol>
+
+        <li>Click on CS Access Live button, located on the right side of the Dreamweaver Application Bar, to access the Connections Home menu</li>
+
+        <li>Click on each of the following menu items:
+
+          <ol>
+
+            <li>Browser Lab(*)</li>
+
+            <li>Learn more</li>
+
+            <li>Acrobat.com Home</li>
+
+            <li>Share my Screen (*)</li>
+
+            <li>CS News and Resources</li>
+
+            <li>Manage my account</li>
+
+            <li>Explore CS Live Services</li>
+
+          </ol>
+
+        </li>
+
+        <li>Verify that always a login screen comes up when you click on entry with (*)</li>
+
+      </ol>
+
+      <h2><a name="S1TC10" id="S1TC10"></a>10. Subject: Not provisioned state: Verify that Access CS Live panel shows when accessing menu entry from Window&gt;Extensions menu</h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: UI</p>
+
+      <p>Frequency: 4</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>None</p>
+
+      <h2>Steps:</h2>
+
+      <p>1) Go to Window&gt;Extensions menu</p>
+
+      <p>2) Click on the "Access CS Live " menu item</p>
+
+      <p>3) Verify that the "Access CS Live " panel displays</p>
+
+      <h1><a name="S1TC11" id="S1TC11"></a>11. Subject: Not provisioned state: test existing service: test Share My Screen basic functionality</h1>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Services</p>
+
+      <p>Frequency: 2</p>
+
+      <p>Smoke: Y</p>
+
+      <p>Acceptance: Y</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>Not provisioned state: Open CH panel by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign Out&rdquo; menu entry</p>
+
+      <h2>Steps:</h2>
+
+      <p>1) Launch Dreamweaver</p>
+
+      <p>2) Go to File&gt;Share My Scren</p>
+
+      <p>3) Verify that the Share My Screen sign in dialog is displayed.</p>
+
+      <p>4) Log in using a valid email address/pwd</p>
+
+      <p>5) Verify that the Share My Screen service is launched</p>
+
+      <p>7) Exit the service</p>
+
+      <p>8) Go to Window&gt;Extensions&gt;Access CS Live</p>
+
+      <p>9) Click on Share My Screen</p>
+
+      <p>10) Verify that the Share My Screen sign in dialog is displayed.</p>
+
+      <p>11) Log in using a valid email address/pwd</p>
+
+      <p>12) Verify that the Share My Screen service is launched</p>
+
+      <h1><a name="S1TC12" id="S1TC12"></a>12. Subject: Not provisioned state: Verify Access CS Live application bar button icon</h1>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Services</p>
+
+      <p>Frequency: 3</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>Not provisioned state: Open CH panel by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign Out&rdquo; menu entry</p>
+
+      <h2>Steps:</h2>
+
+      <p>1) Launch Dreamweaver</p>
+
+      <p>2) Verify the Access CS Live button in the application bar looks like:</p>
+
+      <div>
+
+        <p>Application bar in Online-Mode / no sign-in:</p>
+
+        <p><img src="http://dreamweaver.macromedia.com/bowie/projects/csxs/assets/P_SignIn_Lg_N.png" width="22" height="19" alt="sign-in-online">Access CS Live</p>
+
+        <p>or if a new service is also available like this:</p>
+
+        <p><img src="http://dreamweaver.macromedia.com/bowie/projects/csxs/assets/P_SignInNote_Lg_N.png" width="22" height="19" alt="newnoteoffline">Access CS Live</p>
+
+        <p> </p>
+
+      </div>
+
+      <h2>Provisioned state</h2>
+
+      <h1><a name="S2TC1" id="S2TC1">1. Subject: Provisioned state: Verify Access CS Live dialog's menu items</a></h1>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: UI</p>
+
+      <p>Frequency: 1</p>
+
+      <p>Smoke: Y</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>-</p>
+
+      <h2>Steps:</h2>
+
+      <p>1) Click on the Access CS Live button in the application bar.</p>
+
+      <p>2) Click on Sign-In in the Access Cs Live Panel and enter your AdobeID/Password and sign in.</p>
+
+      <p>3) Verify these menu items exist: (without the descriptions behind them)</p>
+
+      <ul>
+
+        <li>Sign Out</li>
+
+        <li>Browser Lab
+
+          <ul>
+
+            <li>Browserlab (opens BrowserLabs Panel)</li>
+
+            <li>Learn more (opens default browser with Browserlabs homepage)</li>
+
+          </ul>
+
+        </li>
+
+        <li>Acrobat.com
+
+          <ul>
+
+            <li>Acrobat.com Home (open acrobat.com homepage)</li>
+
+            <li>Share my screen (open connect session with your adobe id)</li>
+
+          </ul>
+
+        </li>
+
+        <li>CS News and Resources (open CS News Panel)</li>
+
+        <li>Manage my account (open default browser to adobe.com account management)</li>
+
+        <li>My other CS Live Services (open default browser to adobe.com information page)</li>
+
+      </ul>
+
+      <p> </p>
+
+      <h1><a name="S2TC2" id="S2TC2">2. Subject: Change DW workspace settings and verify that Access CS Live menu still displays correctly</a></h1>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Provisioning</p>
+
+      <p>Frequency: 3</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>a) Provisioned state: Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign In&rdquo; menu entry, enter your adobe-id email address/pwd &amp; click &ldquo;Sign In&rdquo; button to log in into service</p>
+
+      <h2>Steps:</h2>
+
+      <p>1) Go to Window&gt;Workspace Layout &amp; select "Classic"</p>
+
+      <p>2) Click on CS Access Live button, located on the right side of the Dreamweaver Application Bar, to access the Access CS Live panel</p>
+
+      <p>3) Verify these menu items exist: (without the descriptions behind them)</p>
+
+      <ul>
+
+        <li>Sign Out</li>
+
+        <li>Browser Lab
+
+          <ul>
+
+            <li>Browserlab (opens BrowserLabs Panel)</li>
+
+            <li>Learn more (opens default browser with Browserlabs homepage)</li>
+
+          </ul>
+
+        </li>
+
+        <li>Acrobat.com
+
+          <ul>
+
+            <li>Acrobat.com Home (open acrobat.com homepage)</li>
+
+            <li>Share my screen (open connect session with your adobe id)</li>
+
+          </ul>
+
+        </li>
+
+        <li>CS News and Resources (open CS News Panel)</li>
+
+        <li>Manage my account (open default browser to adobe.com account management)</li>
+
+        <li>My other CS Live Services (open default browser to adobe.com information page)</li>
+
+      </ul>
+
+      <p>4) Repeat steps 1-3 using all the other workspace layouts</p>
+
+      <p> </p>
+
+      <h1><a name="S2TC3" id="S2TC3">3. Subject: Provisioned state: Access CS Live panel&gt;Click on "Manage my Account" &amp; verify functionality</a></h1>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Services</p>
+
+      <p>Frequency: 3</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>a) Provisioned state: Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign In&rdquo; menu entry, enter your Adobe-Id email address/pwd &amp; click &ldquo;Sign In&rdquo; button to log in into service</p>
+
+      <h2>Steps:</h2>
+
+      <p>1) Click on CS Access Live button, located on the right side of the Dreamweaver Application Bar, to access the Access CS Live panel</p>
+
+      <p>2) Click on the following menu item:</p>
+
+      <ul>
+
+        <li>Manage my account</li>
+
+      </ul>
+
+      <p>3) Verify it opens the default browser to adobe.com account management page</p>
+
+      <p> </p>
+
+      <h1><a name="S2TC4" id="S2TC4">4. Subject: Provisioned state: Access CS Live panel&gt;Click on "Browser Lab" &amp; verify functionality</a></h1>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Services</p>
+
+      <p>Frequency: 2</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: Y</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS, BrowserLab</p>
+
+      <h2>Setup:</h2>
+
+      <p>a) Provisioned state: Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign In&rdquo; menu entry, enter your email address/pwd &amp; click &ldquo;Sign In&rdquo; button to log in into service</p>
+
+      <h2>Steps:</h2>
+
+      <p>1) Click on CS Access Live button, located on the right side of the Dreamweaver Application Bar, to access the Access CS Live panel</p>
+
+      <p>2) Click on the following menu item:</p>
+
+      <ul>
+
+        <li>Browser Lab
+
+          <ul>
+
+            <li>Browserlab</li>
+
+          </ul>
+
+        </li>
+
+      </ul>
+
+      <p>3) Verify that the BrowserLab panel is opened</p>
+
+      <h1> </h1>
+
+      <p> </p>
+
+      <h1><a name="S2TC5" id="S2TC5">5. Subject: Provisioned state: Access CS Live panel&gt;Click on "Acrobat.com" &amp; verify functionality</a></h1>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Services</p>
+
+      <p>Frequency: 3</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS, Acrobat</p>
+
+      <h2>Setup:</h2>
+
+      <p>a) Provisioned state: Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign In&rdquo; menu entry, enter your email address/pwd &amp; click &ldquo;Sign In&rdquo; button to log in into service</p>
+
+      <h2>Steps:</h2>
+
+      <p>1) Click on CS Access Live button, located on the right side of the Dreamweaver Application Bar, to access the Access CS Live panel</p>
+
+      <p>2) Click on the following menu item:</p>
+
+      <ul>
+
+        <li>Acrobat.com
+
+          <ul>
+
+            <li>Acrobat.com Home</li>
+
+          </ul>
+
+        </li>
+
+      </ul>
+
+      <p>3) Verify the default browser is opening the acrobat.com homepage</p>
+
+      <p> </p>
+
+      <h1><a name="S2TC6" id="S2TC6">6. Subject: Provisioned state: Access CS Live panel&gt;Click on "CS News and Resources" &amp; verify functionality</a></h1>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Services</p>
+
+      <p>Frequency: 3</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>a) Provisioned state: Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign In&rdquo; menu entry, enter your email address/pwd &amp; click &ldquo;Sign In&rdquo; button to log in into service</p>
+
+      <h2>Steps:</h2>
+
+      <p>1) Click on CS Access Live button, located on the right side of the Dreamweaver Application Bar, to access the Access CS Live panel</p>
+
+      <p>2) Click on following menu item:</p>
+
+      <ul>
+
+        <li>CS News and Resources</li>
+
+      </ul>
+
+      <p>3) Verify the CS News and Resources panel is opened and it displays a list of articles</p>
+
+      <p> </p>
+
+      <h1><a name="S2TC7" id="S2TC7">7. Subject: Provisioned state: Access CS Live panel&gt;Click on "My other CS Live Services" &amp; verify functionality</a></h1>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Services</p>
+
+      <p>Frequency: 3</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>a) Provisioned state: Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign In&rdquo; menu entry, enter your email address/pwd &amp; click &ldquo;Sign In&rdquo; button to log in into service</p>
+
+      <h2>Steps:</h2>
+
+      <p>1) Click on CS Access Live button, located on the right side of the Dreamweaver Application Bar, to access the Access CS Live panel</p>
+
+      <p>2) Click on following menu item:</p>
+
+      <ul>
+
+        <li>My other CS Live Services</li>
+
+      </ul>
+
+      <p>3) Verify the default browser opens the adobe.com homepage with additional information about the CS Live services</p>
+
+      <h1><a name="S2TC8" id="S2TC8">8. Subject: Provisioned state: Access CS Live panel&gt;Click Sign Out &amp; verify that the user is signed out and that the panel is back to the unprovisioned state</a></h1>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Services</p>
+
+      <p>Frequency: 2</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: Y</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>a) Provisioned state: Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign In&rdquo; menu entry, enter your email address/pwd &amp; click &ldquo;Sign In&rdquo; button to log in into service</p>
+
+      <h2>Steps:</h2>
+
+      <p>1) Click on CS Access Live button, located on the right side of the Dreamweaver Application Bar, to access the Access CS Live panel</p>
+
+      <p>2) Click on "Sign Out" </p>
+
+      <p>3) Open the Access Cs Live menu via Window-&gt;Extensions-&gt;Access CS Live and</p>
+
+      <p>4) Verify the following menu items appear:</p>
+
+      <ul>
+
+        <li>Sign In</li>
+
+        <li>Browser Lab
+
+          <ul>
+
+            <li>Browserlab</li>
+
+            <li>Learn more</li>
+
+          </ul>
+
+        </li>
+
+        <li>Acrobat.com
+
+          <ul>
+
+            <li>Acrobat.com Home</li>
+
+            <li>Share my screen</li>
+
+          </ul>
+
+        </li>
+
+        <li>CS News and Resources</li>
+
+        <li>Manage my account</li>
+
+        <li>My other CS Live Services</li>
+
+      </ul>
+
+      <p> </p>
+
+      <h1><a name="S2TC9" id="S2TC9">9. Subject: Provisioned state: Access CS Live panel&gt;Work offline &amp; verify that the panel is in offline mode</a></h1>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Services</p>
+
+      <p>Frequency: 3</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <ol>
+
+        <li>.Provisioned state: Open CH menu in Dw by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign In&rdquo; menu entry, enter your email address/pwd &amp; click &ldquo;Sign In&rdquo; button to log in into service</li>
+
+        <li>On Windows open Rededit and set HKEY_CURRENT_USER/Software/Adobe/AdobeOnlineDefault to 0. On Mac open /Library/Preferences/com.adobe.AdobeOnlineHelp.plist and change the value to 0.</li>
+
+      </ol>
+
+      <h2>Steps:</h2>
+
+      <ol>
+
+        <li>Restart Dreamweaver</li>
+
+        <li>Click on CS Access Live button, located on the right side of the Dreamweaver Application Bar</li>
+
+        <li>Verify the Menu shows:
+
+          <ul>
+
+            <li>Adobe CS Live services are currently disabled.</li>
+
+            <li>Browser Lab
+
+              <ul>
+
+                <li>Browserlab</li>
+
+                <li>Learn more</li>
+
+              </ul>
+
+            </li>
+
+            <li>Acrobat.com
+
+              <ul>
+
+                <li>Acrobat.com Home</li>
+
+                <li>Share my screen</li>
+
+              </ul>
+
+            </li>
+
+            <li>CS News and Resources</li>
+
+            <li>Manage my account</li>
+
+            <li>My other CS Live Services</li>
+
+          </ul>
+
+        </li>
+
+        <li>Click the BrowserLabs button</li>
+
+        <li>Verify that the BrowserLab panel opens &amp; shows a message that says something like "You have selected the Offline option"</li>
+
+        <li>Click the Share My Screen button</li>
+
+        <li>Verify a window opens with "Adobe CS Live services are currently disables. Please enable internet connectivity in your product to use CS Live servicers."</li>
+
+        <li>Click in the Search for Help field, type in a search, and hit Enter --&gt; verify that a warning dialog comes up with a message that the offline option is enabled</li>
+
+        <li>Verify also that the Access CS Live button in the application bar looks like this:
+
+          <div>
+
+            <p>Application bar in Offline-Mode :</p>
+
+            <p><img src="http://dreamweaver.macromedia.com/bowie/projects/csxs/assets/P_Offline_Lg_D.png" width="22" height="19" alt="offline">Access CS Live</p>
+
+            <p> </p>
+
+          </div>
+
+        </li>
+
+      </ol>
+
+      <p> </p>
+
+      <h1><a name="S2TC10" id="S2TC10">10. Subject: Test existing service: Search for Help basic functionality</a></h1>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Services</p>
+
+      <p>Frequency: 2</p>
+
+      <p>Smoke: Y</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS, Help</p>
+
+      <h2>Setup:</h2>
+
+      <p>None</p>
+
+      <h2>Steps:</h2>
+
+      <p>1) Launch Dreamweaver</p>
+
+      <p>2) Click in the Search For Help field located in the application toolbar</p>
+
+      <p>3) Type in a search query like "Share My Screen"</p>
+
+      <p>4) Verify that the Community Help Client launches with results for your search</p>
+
+      <h1> </h1>
+
+      <h1><a name="S2TC11" id="S2TC11">11. Subject: Verify UI of Window&gt;Extensions menu</a></h1>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Services</p>
+
+      <p>Frequency: 3</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>a) Provisioned state: Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign In&rdquo; menu entry, enter your email address/pwd &amp; click &ldquo;Sign In&rdquo; button to log in into service</p>
+
+      <h2>Steps:</h2>
+
+      <p>1) Go to Window&gt;Extensions&gt;</p>
+
+      <p>2) Verify that the submenu item contains the following items:</p>
+
+      <ul>
+
+        <li>CS News and Resources</li>
+
+        <li>Access CS Live</li>
+
+        <li>Share My Screen...</li>
+
+        <li>Adobe BrowserLab</li>
+
+      </ul>
+
+      <p> </p>
+
+      <h1><a name="S2TC12" id="S2TC12">12. Subject: Provisioned state: verify functionality of Window&gt;Extensions menu</a></h1>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Services</p>
+
+      <p>Frequency: 3</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: Y</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>a) Provisioned state: Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign In&rdquo; menu entry, enter your email address/pwd &amp; click &ldquo;Sign In&rdquo; button to log in into service</p>
+
+      <h2>Steps:</h2>
+
+      <ol>
+
+        <li>Go to Window&gt;Extensions&gt;</li>
+
+        <li>Click on each of the following menu item and verify that they bring up the appropriate dialog or behavior (Signing out):</li>
+
+      </ol>
+
+      <ul>
+
+        <li>CS News and Resources (open CS News and Resources panel - if not already open)</li>
+
+        <li>Access CS Live (open Access CS Live panel - if not already open)</li>
+
+        <li>Share My Screen... (open Share my Screen in new browser with login user information)</li>
+
+        <li>Adobe BrowserLab (open BrowserLab panel)</li>
+
+      </ul>
+
+      <p> </p>
+
+      <h1><a name="S2TC13" id="S2TC13">13. Subject: Provisioned state: verify user is still signed in after system restart when selecting "stay signed in"</a></h1>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Services</p>
+
+      <p>Frequency: 2</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: Y</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>a) Provisioned state: Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign In&rdquo; menu entry, enter your email address/pwd &amp; click &ldquo;Sign In&rdquo; button to log in into service</p>
+
+      <h2>Steps:</h2>
+
+      <ol>
+
+        <li>Restart your system</li>
+
+        <li>Open Dreamweaver</li>
+
+        <li>Click the Access CS Live button in the application bar</li>
+
+        <li>Verify "Sign Out" is still displayed in the Access CS Live panel</li>
+
+      </ol>
+
+      <h1><a name="S2TC14" id="S1TC13"></a>14. Subject: Provisioned state: Verify Access CS Live application bar button icon</h1>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Services</p>
+
+      <p>Frequency: 3</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>Provisioned state: Open CH panel by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign in&rdquo; and enter your Adobe ID and sign in.</p>
+
+      <h2>Steps:</h2>
+
+      <p>1) Launch Dreamweaver</p>
+
+      <p>2) Verify the Access CS Live button in the application bar looks like:</p>
+
+      <div>
+
+        <p>Application bar in Online-Mode / sign-in:</p>
+
+        <p><img src="http://dreamweaver.macromedia.com/bowie/projects/csxs/assets/P_Service_Lg_N.png" width="22" height="19" alt="onlinesignedin">Access CS Live</p>
+
+        <p>or if a new service is also available like this:</p>
+
+        <p><img src="http://dreamweaver.macromedia.com/bowie/projects/csxs/assets/P_ServiceNote_Lg_N.png" width="22" height="19" alt="notesignedin">Access CS Live</p>
+
+      </div>
+
+      <p> </p>
+
+      <p> </p>
+
+      <h1>B. Internationalization testing</h1>
+
+      <h2><a name="S3TC1" id="S3TC1">1. Subject: Use testfiles with double-byte/hi-ascii path to test BrowserLab</a></h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Internationalization</p>
+
+      <p>Frequency:2</p>
+
+      <p>Smoke: Y</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS, BrowserLab</p>
+
+      <h2>Setup:</h2>
+
+      <p>Download the "Internationalizé_website" folder from the CSXS_2 test folder at \\sffs01.macromedia.com\DWTestFile</p>
+
+      <p>Provisioned state: Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign In&rdquo; menu entry, enter your email address/pwd &amp; click &ldquo;Sign In&rdquo; button to log in into service</p>
+
+      <h2>Steps:</h2>
+
+      <p>1) Site&gt;Manage Sites&gt;New</p>
+
+      <p>2) Define the "Internationalizé_website" folder as your local site root folder</p>
+
+      <p>3) Click on CS Access Live button, located on the right side of the Dreamweaver Application Bar, to access the Access CS Live menu</p>
+
+      <p>4) Click on the following menu items:</p>
+
+      <ul>
+
+        <li>Browser Lab
+
+          <ul>
+
+            <li>Browserlab</li>
+
+          </ul>
+
+        </li>
+
+      </ul>
+
+      <p>5) Verify that the testfiles, which are named using double-bytes/hi-asciis, preview fine via the BrowserLab panel (local preview)</p>
+
+      <p> </p>
+
+      <h2><a name="S3TC2" id="S3TC2">2. Subject: Entering "@" using loc keyboard</a></h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Internationalization</p>
+
+      <p>Frequency: 3</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>Not provisioned state: Open CH panel by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign Out&rdquo; menu entry</p>
+
+      <p>Enable the French keyboard on your OS by going on WinXP to Start&gt;Control Panel&gt;regional and language options&gt;Languages&gt;Text services and input language&gt;Details</p>
+
+      <p>Enable the French keyboard on your OS by going on Mac toSystem Preferences&gt;International&gt;Input Menu</p>
+
+      <p>You can see the French keyboard layout at http://www.microsoft.com/GLOBALDEV/keyboards/kbdfr.htm</p>
+
+      <p>This test can also be run using other international keyboard layouts like German, etc...</p>
+
+      <h2>Steps:</h2>
+
+      <p>1) Click on CS Access Live button, located on the right side of the Dreamweaver Application Bar</p>
+
+      <p>2) Click on the "Sign In" menu item in the Connections Home menu</p>
+
+      <p>3) In the email address field, enter your email address using the French keyboard (left ALT key + 0 to write "@")</p>
+
+      <p>4) Verify that you are able to enter "@" using the french keyboard</p>
+
+      <p> </p>
+
+      <h2><a name="S3TC3" id="S3TC3">3. Subject: Sign in using username w/ double-byte/hi-ascii, pwd w/ double-byte/hi-ascii)</a></h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Internationalization</p>
+
+      <p>Frequency: 3</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>Not provisioned state: Open CH panel by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign Out&rdquo; menu entry</p>
+
+      <h2>Steps:</h2>
+
+      <p>1) Go to Window&gt;Extensions</p>
+
+      <p>2) Click on the "Sign In" menu item in the Connections Home menu</p>
+
+      <p>3) In the email address field, enter the following email address "doublebyte_email" (tbd)</p>
+
+      <p>4) In the password field, copy &amp; paste the following password "doublebyte_password" (tbd)</p>
+
+      <p>5) Click on the "Sign In" button &amp; verify that your email/password is accepted</p>
+
+      <p>6) Repeat for "hiascii_email" &amp; "hiascii_password" (tbd)</p>
+
+      <h2><a name="S3TC4" id="S3TC4">4. Subject:Enter double-byte/hi-ascii in Search for Help field</a></h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Internationalization</p>
+
+      <p>Frequency: 2</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: Y</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS, Help</p>
+
+      <h2>Setup:</h2>
+
+      <p>None</p>
+
+      <h2>Steps:</h2>
+
+      <p>1) Click in the Search For Help field in Dreamweaver Application Bar</p>
+
+      <p>2) Do a search with</p>
+
+      <p>    -hi-asciis (tbd: example here)</p>
+
+      <p>    -double-bytes (tbd: example here)</p>
+
+      <h1>C. Accessibility</h1>
+
+      <h2><a name="S4TC1" id="S4TC1"></a>1. Run accessibility testing on the Connections Home menu &amp; "Sign In" dialog using the JAWS screen reader</h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature:Accessibility</p>
+
+      <p>Frequency: 4</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>Provisioned state: Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign In&rdquo; menu entry, enter your email address/pwd &amp; click &ldquo;Sign In&rdquo; button to log in into service</p>
+
+      <p>Install JAWS screen reader ( http://dreamweaver.macromedia.com/kb/articles/AccessibilityTestChecklist.html ) &amp; enable it</p>
+
+      <h2>Steps:</h2>
+
+      <ol>
+
+        <li>Click on CS Access Live button, located on the right side of the Dreamweaver Application Bar --&gt; verify that JAWS is able to "read" the items in the menu</li>
+
+        <li>Click on the "Sign In" menu item in the Connections Home menu</li>
+
+        <li>Verify that the "Sign In to CS Live" dialog shows up --&gt; verify that JAWS is able to "read" the text in the dialog</li>
+
+      </ol>
+
+      <p> </p>
+
+      <h2><a name="S4TC2" id="S4TC2"></a>2. Run accessibility testing on the Connections Home menu &amp; "Sign In" dialog using high contrast</h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature:Accessibility</p>
+
+      <p>Frequency: 4</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>Provisioned state: Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign In&rdquo; menu entry, enter your email address/pwd &amp; click &ldquo;Sign In&rdquo; button to log in into service</p>
+
+      <p>Enable high contrast settings on your Window machine ( http://dreamweaver.macromedia.com/kb/articles/AccessibilityTestChecklist.html )</p>
+
+      <h2>Steps:</h2>
+
+      <p>Verify that the CS Access Live button, located on the right side of the Dreamweaver Application Bar, is readable (the button should display a black background &amp; white text)</p>
+
+      <p>Click on CS Access Live button, located on the right side of the Dreamweaver Application Bar</p>
+
+      <p>--&gt; verify that the Connections Home menu is readable (the button should display a black background &amp; white text)</p>
+
+      <p>Click on the "Sign In" menu item in the Connections Home menu</p>
+
+      <p>Verify that the "Sign In to CS Live" dialog shows up --&gt;verify that the dialog is readable (the button should display a black background &amp; white text)</p>
+
+      <p> </p>
+
+      <h2><a name="S4TC3" id="S4TC3"></a>3. Run accessibility testing by verifying up/down functionality in the Connections Home dialog &amp; tabbing between various fields/components in the "Sign In" dialog</h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature:Accessibility</p>
+
+      <p>Frequency: 4</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>Not provisioned state: Open CH panel by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign Out&rdquo; menu entry</p>
+
+      <h2>Steps:</h2>
+
+      <ol>
+
+        <li>Click on the CS Access Live button, located on the right side of the Dreamweaver Application Bar</li>
+
+        <li>Click on the Down Arrow key on your keyboard and verify that you can go throught all the menu items under the Connections Home menu. When at the bottom of the menu, use the Up Arrow key to go back upward in the menu. Hit the Enter key and verify that the corresponding dialog opens for the menu item you selected.</li>
+
+        <li>Go back to the Connections Home menu (step #1 of this test plan) &amp; click on the "Sign In" menu item in the Connections Home menu</li>
+
+        <li>Verify that the "Sign In to CS Live" dialog shows up  and verify you can tab between the email address field/password field/Sign In button/Cancel button</li>
+
+        <li></li>
+
+      </ol>
+
+      <h2><a name="S4TC4" id="S4TC4"></a>4. Make sure pressing the ESC button closes the Connections Home dialog</h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature:Accessibility</p>
+
+      <p>Frequency:4</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>Not provisioned state: Open CH panel by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign Out&rdquo; menu entry</p>
+
+      <h2>Steps:</h2>
+
+      <ol>
+
+        <li>Click on the CS Access Live button, located on the right side of the Dreamweaver Application Bar</li>
+
+        <li>Click on the "Sign In" menu item in the Connections Home menu</li>
+
+        <li>Press the ESC button on your keyboard and verify that the dialog is dismissed</li>
+
+        <li>Click on the CS Access Live button, located on the right side of the Dreamweaver Application Bar</li>
+
+        <li>Click on the "Sign In" menu item in the Connections Home menu</li>
+
+        <li>Enter your email address/pwd &amp; click &ldquo;Sign In&rdquo; button to log in</li>
+
+        <li>Select one of the services like BrowserLab Editing --&gt; Verify a dialog box opens for that service</li>
+
+        <li>Press the ESC button on your keyboard and verify that the dialog is dismissed</li>
+
+      </ol>
+
+      <h2><a name="S4TC5" id="S4TC5"></a>5. Verify that there is a keyboard shortcut and under the Window menu for the Connections Home dialog</h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature:Accessibility</p>
+
+      <p>Frequency: 4</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>Not provisioned state: Open CH panel by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign Out&rdquo; menu entry</p>
+
+      <h2>Steps:</h2>
+
+      <ol>
+
+        <li>Go to Window&gt;Extensions menu</li>
+
+        <li>Verify that there is a keyboard shortcut next to the "Connections Home " menu item</li>
+
+      </ol>
+
+      <h1>D. Extensibility</h1>
+
+      <h2><a name="S5TC1" id="S5TC1">1. Subject: Install CSXS Unit Test extension. Verify it works. Uninstall extension.</a></h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature:Extensibility</p>
+
+      <p>Frequency: 3</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: Y</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>Provisioned state: Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign In&rdquo; menu entry, enter your email address/pwd &amp; click &ldquo;Sign In&rdquo; button to log in into service</p>
+
+      <p>Download the CSXS Unit Test extension from the CSXS_2 test folder at \\sffs01.macromedia.com\DWTestFile &amp; place it in the extensions folder in CS5StageManager</p>
+
+      <h2>Steps:</h2>
+
+      <ol>
+
+        <li>Launch Dreamweaver CS5</li>
+
+        <li>Verify that the extension is listed Window-&gt;Extensions</li>
+
+        <li>Click on the menu item "CSXS Unit Test Extension" and verify the corresponding dialog opens</li>
+
+        <li>There should only be one failed test ("GetIdsTest")</li>
+
+        <li>Quit Dreamweaver</li>
+
+        <li>Delete the extension from the CS5StageManager extension folder</li>
+
+        <li>Launch Dreamweaver, open Window-&gt;Extensions, and verify that the extension does not show in the menu anymore</li>
+
+      </ol>
+
+      <h1>E. Performance Testing</h1>
+
+      <h2><a name="S6TC1" id="S6TC1"></a>1. Performance testing: verify Dreamweaver launch time with and without extensions loading</h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Performance</p>
+
+      <p>Frequency: 3</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>You will need a stopwatch for this test</p>
+
+      <h2>Steps:</h2>
+
+      <ol>
+
+        <li>Launch DW and measure time elapsed between the start of launch and when the Dreamweaver workspace is fully loaded (loading of DW is complete, when all (non-CSXS panels are fully loaded)</li>
+
+        <li>Record time min. 10 times</li>
+
+        <li>Remove CSXS_HousingPlugIn.js from the Scripts folder in the Dreamweaver CS5 application folder. This is a quick and dirty way to disable the loading of CSXS extensions.</li>
+
+        <li>Launch DW and measure time elapsed between the start of launch and when the Dreamweaver workspace is fully loaded(loading of DW is complete, when all (non-CSXS panels are fully loaded)</li>
+
+        <li>Record time min. 10 times</li>
+
+        <li>Verify that difference is not bigger than 2 seconds</li>
+
+      </ol>
+
+      <p> </p>
+
+      <h2><a name="S6TC2" id="S6TC2"></a>2. Performance testing: verify that loading CS Live panel takes less than 3 seconds</h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Performance</p>
+
+      <p>Frequency: 4</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>You will need a stopwatch for this test , make sure that you are not signed in</p>
+
+      <p>Download CSXS API test extension and copy it to /CS5ServiceManager/extension/CSXS_API</p>
+
+      <h2>Steps:</h2>
+
+      <ol>
+
+        <li>restart your computer</li>
+
+        <li>open dw</li>
+
+        <li>open CS Live panel</li>
+
+        <li>measure time until it's fully loaded and all menu items are visible</li>
+
+        <li>verify that measured time is less than 3 seconds</li>
+
+      </ol>
+
+      <p> </p>
+
+      <h2><a name="S6TC3" id="S6TC3"></a>3. Performance testing: if applicable, test panel loading time when user installs 10 custom CSXS extensions. Verify app memory consumption.</h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Performance</p>
+
+      <p>Frequency: 3</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>You will need a stopwatch for this test</p>
+
+      <p>Download the 10 test extensions under the CSXS_2 test folder at \\sffs01.macromedia.com\DWTestFiles &amp; place them in the extensions folder in CS5StageManager</p>
+
+      <p>Open Activity monitor(mac) or Task Manager(win), write down memory consumption of dw without panels loaded</p>
+
+      <h2>Steps:</h2>
+
+      <ol>
+
+        <li>Launch DW and measure time elapsed between the start of launch and when the Dreamweaver workspace is fully loaded (loading of DW is complete, when all non-CSXS panels are fully loaded)</li>
+
+        <li>Record time</li>
+
+        <li>Remove CSXS_HousingPlugIn.js from the Scripts folder in the Dreamweaver CS5 application folder. This is a quick and dirty way to disable the loading of CSXS extensions.</li>
+
+        <li>Launch DW and measure time elapsed between the start of launch and when the Dreamweaver workspace is fully loaded (loading of DW is complete, when all non-CSXS panels are fully loaded)</li>
+
+        <li>Record time</li>
+
+        <li>Verify thattime difference is less than X seconds in step 2 and step 5</li>
+
+        <li>open all 10 extensions in dw, compare memory consumption(should not higher than 1MB per extension)</li>
+
+      </ol>
+
+      <h2><a name="S6TC4" id="S6TC4"></a>4. Performance testing: memory consumption by using CS live services</h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Performance</p>
+
+      <p>Frequency: 3</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>Open Activity monitor(mac) or Task Manager(win), write down memory consumption of dw without panels loaded</p>
+
+      <h2>Steps:</h2>
+
+      <ol>
+
+        <li>relaunch DW</li>
+
+        <li>note memory consumption of DW process</li>
+
+        <li>open CS live panel, make sure you are signedout, if not do so</li>
+
+        <li>click on share my screen -&gt; login dialog should open</li>
+
+        <li>cancel dialog -&gt; compare memory consumption</li>
+
+        <li>verify memory consumption difference is nearly the same(not bigger than 500 kb)</li>
+
+        <li>redo this test with browser labs (optional)</li>
+
+      </ol>
+
+      <h1>F. Additional test plans</h1>
+
+      <h2><a name="S7TC1" id="S7TC1"></a>1. Subject: Verify UI of Access CS Live flyout menu</h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Flyout</p>
+
+      <p>Frequency: 3</p>
+
+      <p>Smoke:N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>None</p>
+
+      <h2>Steps:</h2>
+
+      <ol>
+
+        <li>Go to Window&gt;Extensions menu</li>
+
+        <li>Click on the "Connections Home " menu item</li>
+
+        <li>Verify that the "Connections Home " panel displays</li>
+
+        <li>click at the upper right corner of the panel to display the flyout menu</li>
+
+        <li>Verify that the the menu displays the following menu items: TBD</li>
+
+      </ol>
+
+      <h2><a name="S7TC2" id="S7TC2"></a>2. Subject: Verify shutdown of ServiceManager after quitting Dreamweaver</h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Log in</p>
+
+      <p>Frequency: 4</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>Provisioned state: Open CH menu by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign In&rdquo; menu entry, enter your email address/pwd, &amp; click &ldquo;Sign In&rdquo; button to log in into service</p>
+
+      <h2>Steps:</h2>
+
+      <ol>
+
+        <li>Quit Dreamweaver</li>
+
+        <li>Open the Task Manager (Windows) or Console (Mac). You should see an item for "CS5ServiceManager"</li>
+
+        <li>Wait 6 minutes</li>
+
+        <li>Check Task Manager/Console and verify that CS5ServiceManager is no longer there</li>
+
+      </ol>
+
+      <h2><a name="S7TC3" id="S7TC3"></a>3. Subject: Verify CSXS log in/out behavior between CS5 suite products, with "Stay signed in" checked</h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Login</p>
+
+      <p>Frequency: 2</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: Y</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>Install another CS5 Suite Product like Flash, InDesign, Photoshop, etc. Do NOT sign in into the Connections Home panel on that product. Do not launch the product or quit the product if it is launched.</p>
+
+      <p>Provisioned state: Open Dreamweaver's CH menu by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign In&rdquo; menu entry, enter your email address/pwd, check the box for "Stay signed in" &amp; click &ldquo;Sign In&rdquo; button to log in into service</p>
+
+      <h2>Steps:</h2>
+
+      <ol>
+
+        <li>Restart your operating system</li>
+
+        <li>Launch the non-Dreamweaver CS5 Suite product</li>
+
+        <li>Click on the CS Access Live button to open the Connections Home menu in that product</li>
+
+        <li>Verify that you see a menu entry for "Sign Out" (the service should know that you already signed into CSXS via Dreamweaver)</li>
+
+        <li>Select one of the services and make sure that it launches without asking you to sign in</li>
+
+        <li>Launch Dreamweaver</li>
+
+        <li>Click on the CS Access Live button to open the Connections Home menu</li>
+
+        <li>Verify that you see a menu entry for "Sign Out"</li>
+
+        <li>Select one of the services and make sure that it launches without asking you to sign in</li>
+
+      </ol>
+
+      <p> </p>
+
+      <h2><a name="S7TC4" id="S7TC4"></a>4. Subject: Verify CSXS log in/out behavior between CS5 suite products, without "Stay signed in" checked</h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Login</p>
+
+      <p>Frequency: 3</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>Install another CS5 Suite Product like Flash, InDesign, Photoshop, etc. Do NOT sign in into the Connections Home panel on that product. Do not launch the product or quit the product if it is launched.</p>
+
+      <p>Provisioned state: Open Dreamweaver's CH menu by clicking on &ldquo;Access CS Live&rdquo; button, click on &ldquo;Sign In&rdquo; menu entry, enter your email address/pwd, do NOT check the box for "Stay signed in" &amp; click &ldquo;Sign In&rdquo; button to log in into service</p>
+
+      <h2>Steps:</h2>
+
+      <ol>
+
+        <li>Relaunch your operating system</li>
+
+        <li>Launch the non-Dreamweaver CS5 Suite product</li>
+
+        <li>Click on the CS Access Live button to open the Connections Home menu in that product</li>
+
+        <li>Verify that you see a menu entry for "Sign In"</li>
+
+        <li>Quit the product</li>
+
+        <li>Launch Dreamweaver</li>
+
+        <li>Click on the CS Access Live button to open the Connections Home menu</li>
+
+        <li>Verify that you see a menu entry for "Sign In "</li>
+
+      </ol>
+
+      <p> </p>
+
+      <h1>G. Security Testing</h1>
+
+      <h2><a name="S8TC1" id="S8TC1"></a>1. Subject: Test swf shipped with CSXS extensions to make sure that they are signed and run validator(s) on them to make sure they are secure</h2>
+
+      <p>Feature: Connections Home</p>
+
+      <p>Subfeature: Security</p>
+
+      <p>Frequency: 4</p>
+
+      <p>Smoke: N</p>
+
+      <p>Acceptance: N</p>
+
+      <p>Keywords: Bowie, Connections Home, CSXS</p>
+
+      <h2>Setup:</h2>
+
+      <p>None</p>
+
+      <h2>Steps:</h2>
+
+      <p>1) Look under the extensions folder in the CS5StageManager folder</p>
+
+      <p>2) Under each extension/service folders, you will find a swf</p>
+
+      <p>3) Right-click/CMD-clcik on each swf and verify that they are signed by Adobe</p>
+
+      <p>4) Run SWFScan or SWFIntruder or FlashValidator on each swf to make sure they are secure - these tools can be downloaded from the ASSET homepage</p>
+
+      <h2>H. CSXS Services/Extensions testing</h2>
+
+      <p>1) Share My Screen (aka ConnectNow): Feature has not changed since DW CS4 (except for a new entry point via the Connections Home panel). The test plans can be found in the DW testcase app</p>
+
+      <p>2) Search For Help: Feature has not changed since DW CS4. The test plans can be found in the DW testcase app</p>
+
+      <p>3) BrowserLab extension: The test plans can be found in the DW testcase app and at <a href="http://dreamweaver.macromedia.com/MeerMeer/Components/dwExtension/documents/testplan/DWIntegrationTestplan.cfm">http://dreamweaver.macromedia.com/MeerMeer/Components/dwExtension/documents/testplan/DWIntegrationTestplan.cfm</a></p>
+
+      <p>4) Resource Central: CS News and Resources (now called CS News and Resources), and Operation Message extensions. Will need to import test plans into DW textcase app. Test plans can be found at<a href="https://zerowing.corp.adobe.com/display/resourcecentral/Resource+Central+product+test+plans">https://zerowing.corp.adobe.com/display/resourcecentral/Resource+Central+product+test+plans</a></p>
+
+      <p>5) Acrobat.com: No test plan needed since this is a SaaS application hosted on the web and we just have a link under Connections Home</p>
+
+      <h2><a name="comments" id="comments"></a>Comments</h2>
+
+      <p><a href="http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/testplandefectlog.cfm">http://dreamweaver.macromedia.com/bowie/projects/csxs/documents/testplandefectlog.cfm</a></p>
+
+      <p> </p>
+
+      <p><br>
+
+        <br>
+
+        <br>
+
+        <br>
+
+      </p>
+
+      <p> </p>
+
+      <p> </p>
+
+      <p> </p>
+
+      <p> </p>
+
+      <p> </p>
+
+      <p> </p>
+
+      <p> </p>
+
+    </div>
+
+    <br>
+
+<p>&nbsp;</p>
+
+</body>
+
+</html>

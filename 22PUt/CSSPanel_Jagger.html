@@ -1,0 +1,423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>CSS Panel modernization</title>
+
+
+
+<link href="jaggercss/less.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+
+
+<body>
+
+    <h1 class="Test11">CSS panel modernization for Jagger<br />
+
+    </h1>
+
+    <p>last updated April 7-201 by <a href="mailto:slepcha@adobe.com">Silas Lepcha</a></p>
+
+<p>QE: Sarthak Singhal, Silas Norbu Lepcha</p>
+
+    <p>Dev:     Aadithya</p>
+
+    <p>&nbsp;</p>
+
+    <p><strong>Priority - </strong></p>
+
+    <p> <strong>M - MUST</strong> have this. <br />
+
+      <strong>S - SHOULD</strong> have this if at all possible.<br />
+
+      <strong>C - COULD</strong> have this if it does not effect anything else.<br />
+
+    <strong>W - WON'T</strong> have this time but would like in the future. </p>
+
+
+
+
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<table width="100%" border="1" cellpadding="0" cellspacing="0">
+
+  <col width="64" span="2" />
+
+  <col width="75" />
+
+  <col width="448" />
+
+  <col width="657" />
+
+  <tr>
+
+    <td width="30" height="0" valign="top"><blockquote>
+
+      <p><strong>Sno</strong></p>
+
+    </blockquote></td>
+
+    <td width="514" align="center" valign="top"><blockquote>
+
+      <p><strong>Workflow</strong></p>
+
+    </blockquote></td>
+
+    <td width="57" align="center" valign="top"><strong>Visual </strong></td>
+
+    <td width="59" align="center" valign="top"><blockquote>
+
+      <p><strong>Priority</strong></p>
+
+    </blockquote></td>
+
+    <td width="75" align="center" valign="top"><blockquote>
+
+      <p><strong>Exisiting Panel</strong></p>
+
+    </blockquote></td>
+
+    <td width="165" align="center" valign="top"><strong>New Panel</strong></td>
+
+    <td width="232" align="center" valign="top"><blockquote>
+
+      <p><strong>Comments</strong></p>
+
+    </blockquote></td>
+
+  </tr>
+
+  <tr>
+
+    <td height="46" valign="top">1</td>
+
+    <td valign="top">&quot;All&quot; View showing all the rules applied in the document.</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td align="center" valign="top">Must</td>
+
+    <td align="center" valign="top"><p class="green">Yes</p></td>
+
+    <td align="center" valign="top"><p class="green">Yes</p></td>
+
+    <td valign="top">By default in the New CSS rules panel all rules will be shown.</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">2</td>
+
+    <td valign="top">Rules in the new CSS rules panel will show a preview of the properties. e.g background color and color</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td align="center" valign="top">Must</td>
+
+    <td align="center" valign="top"><p class="yellow">No</p></td>
+
+    <td align="center" valign="top"><p class="green">Yes</p></td>
+
+    <td valign="top">Available in the New CSS rules panel.</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">3</td>
+
+    <td valign="top">The New Rules panel will have a search.Search will filter rules on typing</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td align="center" valign="top">Should</td>
+
+    <td align="center" valign="top"><p class="yellow">No</p></td>
+
+    <td align="center" valign="top"><p class="green">Yes</p></td>
+
+    <td valign="top">This will be great to have.</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">4</td>
+
+    <td valign="top"><p>&quot;All&quot; view showing multiple css files for media query attached html files.</p></td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td align="center" valign="top">Must</td>
+
+    <td align="center" valign="top"><p class="green">Yes</p></td>
+
+    <td align="center" valign="top"><p class="green">Yes</p></td>
+
+    <td valign="top">Usefull in case of media queries and a must have.</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">4.1</td>
+
+    <td valign="top">Show media queries applied within a css file.</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td align="center" valign="top">Should</td>
+
+    <td align="center" valign="top"><p class="yellow">No - If body is defined for 3 screen widths using media queries within the cssfile,all 3 rules are shown.</p></td>
+
+    <td align="center" valign="top">TBD</td>
+
+    <td valign="top">Usefull when mediaqueries are defined within the css file.</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">5</td>
+
+    <td valign="top">Rules shown on the basis of context in design and live view.</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td align="center" valign="top">Must</td>
+
+    <td align="center" valign="top"><p class="green">Yes</p></td>
+
+    <td align="center" valign="top"><p class="green">Yes</p></td>
+
+    <td valign="top">rules that match the selection will be shown.</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">6</td>
+
+    <td valign="top">In &quot;current&quot; view, all the rules applied to a selection are displayed</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td align="center" valign="top">Yes</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td valign="top">&nbsp;</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">7</td>
+
+    <td valign="top">Enable and Disable of CSS properties in all views</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td align="center" valign="top">Yes</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td valign="top">&nbsp;</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">8</td>
+
+    <td valign="top">Double click to a rule name in &quot;Current&quot; view opens dialog for editing the set properties</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td align="center" valign="top">Yes</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td valign="top">&nbsp;</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">7</td>
+
+    <td valign="top">Showing Category view</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td align="center" valign="top">Yes</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td valign="top">&nbsp;</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">8</td>
+
+    <td valign="top">Showing List view</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td align="center" valign="top">Yes</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td valign="top">&nbsp;</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">9</td>
+
+    <td valign="top">Showing set properties view</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td align="center" valign="top">Yes</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td valign="top">&nbsp;</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">10</td>
+
+    <td valign="top">In &quot;Set Properties&quot; view, ability to hand code a property and then add/edit it.</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td align="center" valign="top">Yes</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td valign="top">&nbsp;</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">11</td>
+
+    <td valign="top">Attaching a new external style sheet</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td align="center" valign="top">High</td>
+
+    <td align="center" valign="top">Yes</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td valign="top">&nbsp;</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">12</td>
+
+    <td valign="top">Creating a new rule</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td align="center" valign="top">High</td>
+
+    <td align="center" valign="top">Yes</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td valign="top">&nbsp;</td>
+
+  </tr>
+
+  <tr>
+
+    <td valign="top">13</td>
+
+    <td valign="top">Deleting a css property</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td align="center" valign="top">High</td>
+
+    <td align="center" valign="top">Yes</td>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+    <td valign="top">&nbsp;</td>
+
+  </tr>
+
+  <tr>
+
+    <td height="26" valign="top">&nbsp;</td>
+
+    <td>&nbsp;</td>
+
+    <td align="center">&nbsp;</td>
+
+    <td align="center">&nbsp;</td>
+
+    <td align="center">&nbsp;</td>
+
+    <td align="center">&nbsp;</td>
+
+    <td>&nbsp;</td>
+
+  </tr>
+
+  
+
+</table>
+
+<p>&nbsp;</p>
+
+<p class="bigger">
+
+Initial Mock up 
+
+</p>
+
+<p class="bigger"><img src="jaggerimages/cssPanel.png" width="1680" height="1050" alt="mock1" /></p>
+
+</body>
+
+</html>

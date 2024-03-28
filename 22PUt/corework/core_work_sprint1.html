@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>Duh Winning - Sprint 1</title>
+
+<!--[if IE]>
+
+<style type="text/css"> 
+
+/* place css fixes for all versions of IE in this conditional comment */
+
+.thrColLiqHdr #sidebar2, .thrColLiqHdr #sidebar1 { padding-top: 30px; }
+
+.thrColLiqHdr #mainContent { zoom: 1; padding-top: 15px; }
+
+/* the above proprietary zoom property gives IE the hasLayout it needs to avoid several bugs */
+
+</style>
+
+<![endif]-->
+
+<link href="../../css/thrColLiqHdr.css" rel="stylesheet" type="text/css" ice:style="true" />
+
+<link href="../../css/jagger.css" rel="stylesheet" type="text/css" ice:style="true" />
+
+<style type="text/css">
+
+<!--
+
+.smallText {
+
+	font-size: 80%;
+
+}
+
+#buglogging {	background-color: #E5EDF3;
+
+	border: 1px solid #999;
+
+}
+
+#requirements {background-color: #CEFFFF;
+
+	border: 2px solid #999999;
+
+	padding: 5px;
+
+}
+
+.style1 {color: #5956A3}
+
+.style2 {color: #990000}
+
+-->
+
+</style>
+
+</head>
+
+<body class="thrColLiqHdr">
+
+<cfset newRange = #DateAdd("w",7,Now())#>
+
+<div id="container" ice:container="container0">
+
+  <div id="header">
+
+    <h1>Duh Winning Scrum Team - Sprint 1 (04/25/2011 - 06/03/2011)</h1>
+
+    <!-- end #header -->
+
+  </div>
+
+  <div id="Content">
+
+    <div>
+
+      <h3>Documents</h3>
+
+      <ul>
+
+        <li><a href="../ModernWebTech/Scrum_plan_DuhWinning.xlsx">Planning meeting note</a>
+
+          <ul>
+
+            <li>Decisions during Spring 1 planning meeting:
+
+              <ul>
+
+                <li>i18n Testing Task Item: Includes i18n feature testing and pseudo translated build tesitng (if needed)</li>
+
+                <li>Test Case Outline: Includes Test Case Outline Review time</li></ul></li></ul></li>
+
+      </ul>
+
+      <h3>Team Capacity</h3>
+
+      <p>Sprint 1 capacity days = 20 days</p>
+
+      <table cellspacing="0" cellpadding="0">
+
+        <col width="66" span="9" />
+
+        <tr>
+
+          <td width="66" bgcolor="#B4B1D6">&nbsp;</td>
+
+          <td width="66" bgcolor="#B4B1D6"><strong>Jeff</strong></td>
+
+          <td width="66" bgcolor="#B4B1D6"><strong>Andrew</strong></td>
+
+          <td width="66" bgcolor="#B4B1D6"><strong>Debbie</strong></td>
+
+          <td width="66" bgcolor="#B4B1D6"><strong>Randy</strong></td>
+
+          <td width="66" bgcolor="#B4B1D6"><strong>Raymond</strong></td>
+
+          <td width="66" bgcolor="#B4B1D6"><strong>Corrinna</strong></td>
+
+          <td width="66" bgcolor="#B4B1D6"><strong>Suresh</strong></td>
+
+          <td width="66" bgcolor="#B4B1D6"><strong>Total</strong></td>
+
+        </tr>
+
+        <tr>
+
+          <td width="66">PTO</td>
+
+          <td align="right" width="66">0.00</td>
+
+          <td align="right" width="66">2.00</td>
+
+          <td align="right" width="66">2.00</td>
+
+          <td align="right" width="66">0.00</td>
+
+          <td align="right" width="66">0.00</td>
+
+          <td align="right" width="66">1.00</td>
+
+          <td align="right" width="66">1.00</td>
+
+          <td align="right" width="66">6.00</td>
+
+        </tr>
+
+        <tr>
+
+          <td width="66">Sick Day</td>
+
+          <td align="right" width="66">1.00</td>
+
+          <td align="right" width="66">1.00</td>
+
+          <td align="right" width="66">1.00</td>
+
+          <td align="right" width="66">1.00</td>
+
+          <td align="right" width="66">1.00</td>
+
+          <td align="right" width="66">1.00</td>
+
+          <td align="right" width="66">1.00</td>
+
+          <td align="right" width="66">7.00</td>
+
+        </tr>
+
+        <tr>
+
+          <td width="66">Total</td>
+
+          <td align="right" width="66">1.00</td>
+
+          <td align="right" width="66">3.00</td>
+
+          <td align="right" width="66">3.00</td>
+
+          <td align="right" width="66">1.00</td>
+
+          <td align="right" width="66">1.00</td>
+
+          <td align="right" width="66">2.00</td>
+
+          <td align="right" width="66">2.00</td>
+
+          <td align="right" width="66">13.00</td>
+
+        </tr>
+
+        <tr>
+
+          <td width="66" bgcolor="#B4B1D6"><strong>Capacity</strong></td>
+
+          <td width="66" align="right" bgcolor="#B4B1D6"><strong>57.00</strong></td>
+
+          <td width="66" align="right" bgcolor="#B4B1D6"><strong>51.00</strong></td>
+
+          <td width="66" align="right" bgcolor="#B4B1D6"><strong>51.00</strong></td>
+
+          <td width="66" align="right" bgcolor="#B4B1D6"><strong>57.00</strong></td>
+
+          <td width="66" align="right" bgcolor="#B4B1D6"><strong>57.00</strong></td>
+
+          <td width="66" align="right" bgcolor="#B4B1D6"><strong>54.00</strong></td>
+
+          <td width="66" align="right" bgcolor="#B4B1D6"><strong>54.00</strong></td>
+
+          <td width="66" align="right" bgcolor="#FF9900"><strong>381.00</strong></td>
+
+        </tr>
+
+      </table>
+
+      <p>&nbsp;</p>
+
+      <h3>User Stories</h3>
+
+<ul>
+
+  <li>Tech Spike: Research: Best Practices for CSS3 Transitions</li>
+
+  <li>Tech Spike: Research: Webkit Currency Roadmap for Integration</li>
+
+  <li>Multi-CSS: Using Property Inspector</li>
+
+  <li>Tech Spike: Research: Web Fonts Best Practices</li>
+
+  <li>Research Sprint 2 User Stories</li>
+
+  <li>Tech Spike: Research: HTML5 Video Best Practices</li>
+
+  </ul>
+
+<p><strong><span class="style2">Things to consider when researching:</span></strong></p>
+
+<table cellspacing="0" cellpadding="0">
+
+  <col width="206" />
+
+  <tr>
+
+    <td height="19" width="278">Talk to    the customer</td>
+
+  </tr>
+
+  <tr>
+
+    <td height="38" width="278">Try    things (Work with the technology)</td>
+
+  </tr>
+
+  <tr>
+
+    <td height="19" width="278">Building    the proto type </td>
+
+  </tr>
+
+</table>
+
+<p>&nbsp;</p>
+
+<h3><span class="style1">Tech Spike: Research: Best Practices for CSS3 Transitions</span></h3>
+
+<ul>
+
+  <li><a href="../ModernWebTech/sprint1/corrinna_support_near_future.html">Research what browsers/devices will support in near future releases</a></li>
+
+  <li><a href="../ModernWebTech/sprint1/andrew_cssTransitionBrowserCompatibility.html">[Andrew] CSS3 Transitions, Transforms and Animation browser compabilities chart</a></li>
+
+  </ul>
+
+<h3><span class="style1">Tech Spike: Research: Webkit Currency Roadmap for Integration</span></h3>
+
+<ul>
+
+  <li>Link to document or proposal</li>
+
+  <li>Link to document or proposal</li>
+
+</ul>
+
+<h3><span class="style1">Multi-CSS: Using Property Inspector</span></h3>
+
+<ul>
+
+  <li>Link to document</li>
+
+  <li>Test Case Outline</li>
+
+  <li>Test Case</li>
+
+</ul>
+
+<h3><span class="style1">Tech Spike: Research: Web Fonts Best Practices</span></h3>
+
+<ul>
+
+  <li>Link to document or proposal</li>
+
+  <li>Link to document or proposal</li>
+
+</ul>
+
+<h3><span class="style1">Research Sprint 2 User Stories</span></h3>
+
+<ul>
+
+  <li>Link to document or proposal</li>
+
+  <li>Link to document or proposal</li>
+
+</ul>
+
+<h3><span class="style1">Tech Spike: Research: HTML5 Video Best Practices</span></h3>
+
+<ul>
+
+  <li>Link to document or proposal</li>
+
+  <li>Link to document or proposal</li>
+
+</ul>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<h3>&nbsp;</h3>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+      <p>&nbsp;</p>
+
+    </div>
+
+    <div></div>
+
+    <h3>&nbsp;</h3>
+
+    <p>&nbsp;</p>
+
+    <p>&nbsp;</p></div> 
+
+  <!-- end mainContent div -->
+
+  <!-- This clearing element should immediately follow the #mainContent div in order to force the #container div to contain all child floats -->
+
+  <br class="clearfloat" />
+
+  <div id="footer">
+
+    
+
+    <p align="right" class="footerText">last updated:<strong><strong><strong><strong><strong><strong><strong><strong>
+
+      <!-- #BeginDate format:Am1 -->May 3, 2011<!-- #EndDate -->
+
+    </strong></strong></strong></strong></strong></strong></strong></strong><br />
+
+      <!---<a href="index.cfm" title="To Edit Using ICE, press Control + E"><img src="../images/ice_tiny.gif" width="26" height="26" /><br />
+
+      <br />--->
+
+      </a><strong>adobe confidential</strong></p>
+
+    <!-- end #footer -->
+
+  </div>
+
+  <!-- end #container -->
+
+</div>
+
+<script type="text/javascript">
+
+<!--
+
+writeFader();
+
+//-->
+
+</script>
+
+</body>
+
+</html>
+
